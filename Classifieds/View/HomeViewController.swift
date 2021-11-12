@@ -74,43 +74,43 @@ private extension HomeViewController {
     
     func setupViews() {
         view.backgroundColor = .white
-        view.addSubview(collectionView)
         
-        let stack = UIStackView(arrangedSubviews: [
-                                createLabel(text: uiModel.title, size: 24, color: .secondaryDark),
-                                createLabel(text: uiModel.subTitle, size: 16, color: .primaryLight)
-                                ])
-        stack.axis = .vertical
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.spacing = 5
+        let stack = createStackView()
         view.addSubview(stack)
+        stack.fill(leading: view.safeAreaLayoutGuide.leadingAnchor,
+                   trailing: view.safeAreaLayoutGuide.trailingAnchor,
+                   top: view.safeAreaLayoutGuide.topAnchor,
+                   insets: .init(top: 24, left: 24, bottom: 0, right: 24))
         
-        NSLayoutConstraint.activate([
-            stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24)
-        ])
+        let labelListingTitle = createLabel(text: uiModel.listTitle, size: 16, color: .primaryDark)
+        view.addSubview(labelListingTitle)
         
-        let newLabel = createLabel(text: uiModel.listTitle, size: 16, color: .primaryDark)
-        view.addSubview(newLabel)
+        labelListingTitle.fill(leading: stack.leadingAnchor,
+                               trailing: stack.trailingAnchor,
+                               top: stack.bottomAnchor,
+                               insets: .init(top: 32, left: 0, bottom: 0, right: 0))
         
-        NSLayoutConstraint.activate([
-            newLabel.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 32),
-            newLabel.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
-            newLabel.trailingAnchor.constraint(equalTo: stack.trailingAnchor),
-        ])
-                
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: newLabel.bottomAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+        view.addSubview(collectionView)
+        collectionView.fill(leading: view.safeAreaLayoutGuide.leadingAnchor,
+                            trailing: view.safeAreaLayoutGuide.trailingAnchor,
+                            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                            top: labelListingTitle.bottomAnchor)
+        
         navigationController?.navigationBar.isHidden = true
     }
     
     private var collectionViewMargin: UIEdgeInsets {
         .init(top: 12, left: 24, bottom: 24, right: 24)
+    }
+    
+    private func createStackView() -> UIStackView {
+        let sv = UIStackView(arrangedSubviews: [
+                                createLabel(text: uiModel.title, size: 24, color: .secondaryDark),
+                                createLabel(text: uiModel.subTitle, size: 16, color: .primaryLight)
+                                ])
+        sv.axis = .vertical
+        sv.spacing = 5
+        return sv
     }
     
     func createCollectionView() -> UICollectionView {
