@@ -22,6 +22,7 @@
 		1D549D40273EFEB100E884AA /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D3F273EFEB100E884AA /* Color.xcassets */; };
 		1D549D42273F039C00E884AA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D41273F039C00E884AA /* UIViewExtensions.swift */; };
 		1D549D4C273F172F00E884AA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D4B273F172F00E884AA /* DetailViewController.m */; };
+		1D549D51273F182700E884AA /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D50273F182700E884AA /* Detail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1D549D49273F172F00E884AA /* Classifieds-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Classifieds-Bridging-Header.h"; sourceTree = "<group>"; };
 		1D549D4A273F172F00E884AA /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1D549D4B273F172F00E884AA /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1D549D50273F182700E884AA /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		1D549D26273EC82000E884AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D549D4D273F180600E884AA /* StoryBoard */,
 				1D549D24273EAD2900E884AA /* HomeViewController.swift */,
 				1D549D4A273F172F00E884AA /* DetailViewController.h */,
 				1D549D4B273F172F00E884AA /* DetailViewController.m */,
@@ -191,6 +194,14 @@
 				1D549D41273F039C00E884AA /* UIViewExtensions.swift */,
 			);
 			path = UIKitExtension;
+			sourceTree = "<group>";
+		};
+		1D549D4D273F180600E884AA /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				1D549D50273F182700E884AA /* Detail.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 				1D549D40273EFEB100E884AA /* Color.xcassets in Resources */,
 				1D549D01273EA87F00E884AA /* LaunchScreen.storyboard in Resources */,
 				1D549CFE273EA87F00E884AA /* Assets.xcassets in Resources */,
+				1D549D51273F182700E884AA /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
