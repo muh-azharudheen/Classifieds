@@ -18,6 +18,8 @@
 		1D549D2A273EC85000E884AA /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D28273EC85000E884AA /* HomeListCell.xib */; };
 		1D549D35273EFBF000E884AA /* quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D34273EFBF000E884AA /* quicksand.ttf */; };
 		1D549D38273EFC7700E884AA /* CFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D37273EFC7700E884AA /* CFont.swift */; };
+		1D549D3E273EFE6F00E884AA /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D3D273EFE6F00E884AA /* UIColor-Extension.swift */; };
+		1D549D40273EFEB100E884AA /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D3F273EFEB100E884AA /* Color.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		1D549D28273EC85000E884AA /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		1D549D34273EFBF000E884AA /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicksand.ttf; sourceTree = "<group>"; };
 		1D549D37273EFC7700E884AA /* CFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFont.swift; sourceTree = "<group>"; };
+		1D549D3D273EFE6F00E884AA /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		1D549D3F273EFEB100E884AA /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +111,11 @@
 			children = (
 				1D549CF4273EA87D00E884AA /* AppDelegate.swift */,
 				1D549CF6273EA87D00E884AA /* SceneDelegate.swift */,
+				1D549D39273EFE4500E884AA /* Extensions */,
 				1D549D26273EC82000E884AA /* View */,
 				1D549D2D273EF9C000E884AA /* Font */,
 				1D549CFD273EA87F00E884AA /* Assets.xcassets */,
+				1D549D3F273EFEB100E884AA /* Color.xcassets */,
 				1D549CFF273EA87F00E884AA /* LaunchScreen.storyboard */,
 				1D549D02273EA87F00E884AA /* Info.plist */,
 			);
@@ -159,6 +165,22 @@
 				1D549D37273EFC7700E884AA /* CFont.swift */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		1D549D39273EFE4500E884AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D549D3C273EFE5D00E884AA /* UIKitExtension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1D549D3C273EFE5D00E884AA /* UIKitExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1D549D3D273EFE6F00E884AA /* UIColor-Extension.swift */,
+			);
+			path = UIKitExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +288,7 @@
 			files = (
 				1D549D35273EFBF000E884AA /* quicksand.ttf in Resources */,
 				1D549D2A273EC85000E884AA /* HomeListCell.xib in Resources */,
+				1D549D40273EFEB100E884AA /* Color.xcassets in Resources */,
 				1D549D01273EA87F00E884AA /* LaunchScreen.storyboard in Resources */,
 				1D549CFE273EA87F00E884AA /* Assets.xcassets in Resources */,
 			);
@@ -293,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D549CF5273EA87D00E884AA /* AppDelegate.swift in Sources */,
+				1D549D3E273EFE6F00E884AA /* UIColor-Extension.swift in Sources */,
 				1D549D38273EFC7700E884AA /* CFont.swift in Sources */,
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
 				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
