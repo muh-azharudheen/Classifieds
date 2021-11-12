@@ -11,6 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelSubTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelPrice;
+@property (weak, nonatomic) IBOutlet UIButton *buttonBuyNow;
+
 @end
 
 NS_ASSUME_NONNULL_END

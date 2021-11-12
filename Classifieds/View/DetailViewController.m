@@ -6,6 +6,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Classifieds-Swift.h"
 
 @interface DetailViewController ()
 
@@ -16,5 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setupViews];
 }
+
+- (void) setupViews {
+    
+}
+
 @end
