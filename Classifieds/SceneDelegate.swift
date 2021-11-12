@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func initialViewController() -> UIViewController {
-        let controller = HomeViewController()
+        let controller = HomeViewController(lists: [])
         controller.title = "Home"
         return UINavigationController(rootViewController: controller)
     }
