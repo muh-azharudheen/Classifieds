@@ -29,4 +29,10 @@ extension UIView {
             bottomAnchor.constraint(equalTo: bottom, constant: -insets.bottom).isActive = true
         }
     }
+    
+    func setCenter(to view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
 }

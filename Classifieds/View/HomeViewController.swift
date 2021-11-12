@@ -23,12 +23,13 @@ struct HomeUIModel {
 class HomeViewController: UIViewController {
     
     private lazy var collectionView = createCollectionView()
+    private lazy var viewActivityIndicator = createActivityIndicator()
     
-    private var lists: [List]
     private var uiModel: HomeUIModel
     
-    init(lists: [List], uiModel: HomeUIModel) {
-        self.lists = lists
+    private var datasource = [List]()
+    
+    init(uiModel: HomeUIModel) {
         self.uiModel = uiModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,12 +48,12 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? HomeListCell else { return UICollectionViewCell() }
-        cell.list = lists[indexPath.item]
+        cell.list = datasource[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return lists.count
+        return datasource.count
     }
 }
 
@@ -96,6 +97,10 @@ private extension HomeViewController {
                             bottom: view.safeAreaLayoutGuide.bottomAnchor,
                             top: labelListingTitle.bottomAnchor)
         
+        view.addSubview(viewActivityIndicator)
+        viewActivityIndicator.setCenter(to: view)
+        viewActivityIndicator.startAnimating()
+        
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -131,5 +136,11 @@ private extension HomeViewController {
         label.textColor = color
         label.text = text
         return label
+    }
+    
+    func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = false
+        return activityIndicator
     }
 }
