@@ -120,7 +120,7 @@ private extension HomeViewController {
     func createLabel(text: String, size: CGFloat) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "quicksand", size: size)
+        label.font = CFont.quickSand.font(with: size)
         label.text = text
         return label
     }

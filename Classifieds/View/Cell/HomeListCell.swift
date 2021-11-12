@@ -22,7 +22,7 @@ class HomeListCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        configureImageView()
+        setupViews()
     }
     
     // TODO: Implement Image loading from url
@@ -31,7 +31,11 @@ class HomeListCell: UICollectionViewCell {
         labelSubTitle?.text = list?.subtitle
     }
     
-    private func configureImageView() {
+    private func setupViews() {
+        
+        labelTitle?.font = CFont.quickSand.font(with: 16)
+        labelSubTitle?.font = CFont.quickSand.font(with: 12)
+        
         imageView?.layer.cornerRadius = 10
         imageView?.layer.masksToBounds = true
     }
