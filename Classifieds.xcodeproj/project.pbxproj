@@ -17,6 +17,7 @@
 		1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D27273EC85000E884AA /* HomeListCell.swift */; };
 		1D549D2A273EC85000E884AA /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D28273EC85000E884AA /* HomeListCell.xib */; };
 		1D549D35273EFBF000E884AA /* quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D34273EFBF000E884AA /* quicksand.ttf */; };
+		1D549D38273EFC7700E884AA /* CFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D37273EFC7700E884AA /* CFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1D549D27273EC85000E884AA /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		1D549D28273EC85000E884AA /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		1D549D34273EFBF000E884AA /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicksand.ttf; sourceTree = "<group>"; };
+		1D549D37273EFC7700E884AA /* CFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				1D549D34273EFBF000E884AA /* quicksand.ttf */,
+				1D549D37273EFC7700E884AA /* CFont.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D549CF5273EA87D00E884AA /* AppDelegate.swift in Sources */,
+				1D549D38273EFC7700E884AA /* CFont.swift in Sources */,
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
 				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
 				1D549D25273EAD2900E884AA /* HomeViewController.swift in Sources */,
