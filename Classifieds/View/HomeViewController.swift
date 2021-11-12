@@ -11,6 +11,13 @@ struct List {
     var title: String
     var subtitle: String
     var imageURL: String?
+    var thumbNailURL: String?
+}
+
+struct HomeUIModel {
+    let title: String
+    let subTitle: String
+    let listTitle: String
 }
 
 class HomeViewController: UIViewController {
@@ -18,11 +25,11 @@ class HomeViewController: UIViewController {
     private lazy var collectionView = createCollectionView()
     
     private var lists: [List]
-    private var listTitle: String
+    private var uiModel: HomeUIModel
     
-    init(lists: [List], listTitle: String) {
+    init(lists: [List], uiModel: HomeUIModel) {
         self.lists = lists
-        self.listTitle = listTitle
+        self.uiModel = uiModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -70,25 +77,25 @@ private extension HomeViewController {
         view.addSubview(collectionView)
         
         let stack = UIStackView(arrangedSubviews: [
-                                createLabel(text: "Hello, Dubizzle", size: 24),
-                                createLabel(text: "May 12, Sunday", size: 16)
+                                createLabel(text: uiModel.title, size: 24, color: .secondaryDark),
+                                createLabel(text: uiModel.subTitle, size: 16, color: .primaryLight)
                                 ])
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.spacing = 3
+        stack.spacing = 5
         view.addSubview(stack)
         
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
-            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
+            stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24)
         ])
         
-        let newLabel = createLabel(text: listTitle, size: 16)
+        let newLabel = createLabel(text: uiModel.listTitle, size: 16, color: .primaryDark)
         view.addSubview(newLabel)
         
         NSLayoutConstraint.activate([
-            newLabel.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 36),
+            newLabel.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 32),
             newLabel.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
             newLabel.trailingAnchor.constraint(equalTo: stack.trailingAnchor),
         ])
@@ -103,7 +110,7 @@ private extension HomeViewController {
     }
     
     private var collectionViewMargin: UIEdgeInsets {
-        .init(top: 24, left: 24, bottom: 24, right: 24)
+        .init(top: 12, left: 24, bottom: 24, right: 24)
     }
     
     func createCollectionView() -> UICollectionView {
@@ -117,10 +124,11 @@ private extension HomeViewController {
         return cv
     }
     
-    func createLabel(text: String, size: CGFloat) -> UILabel {
+    func createLabel(text: String, size: CGFloat, color: UIColor) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = CFont.quickSand.font(with: size)
+        label.textColor = color
         label.text = text
         return label
     }

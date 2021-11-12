@@ -34,7 +34,9 @@ class HomeListCell: UICollectionViewCell {
     private func setupViews() {
         
         labelTitle?.font = CFont.quickSand.font(with: 16)
+        labelTitle?.textColor = .primaryDark
         labelSubTitle?.font = CFont.quickSand.font(with: 12)
+        labelSubTitle?.textColor = .primaryLight
         
         imageView?.layer.cornerRadius = 10
         imageView?.layer.masksToBounds = true
