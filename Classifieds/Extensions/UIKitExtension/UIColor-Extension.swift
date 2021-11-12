@@ -5,4 +5,20 @@
 //  Created by Muhammed Azharudheen on 12/11/2021.
 //
 
-import Foundation
+import UIKit
+
+extension UIColor {
+    
+    static var primaryDark: UIColor {
+        UIColor(named: "primaryDark") ?? .black
+    }
+    
+    static var secondaryDark: UIColor {
+        UIColor(named: "secondaryDark") ?? .black
+    }
+    
+    static var primaryLight: UIColor {
+        UIColor(named: "primaryLight") ?? .black
+    }
+}
+
