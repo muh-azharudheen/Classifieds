@@ -20,6 +20,7 @@
 		1D549D38273EFC7700E884AA /* CFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D37273EFC7700E884AA /* CFont.swift */; };
 		1D549D3E273EFE6F00E884AA /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D3D273EFE6F00E884AA /* UIColor-Extension.swift */; };
 		1D549D40273EFEB100E884AA /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D3F273EFEB100E884AA /* Color.xcassets */; };
+		1D549D42273F039C00E884AA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D41273F039C00E884AA /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1D549D37273EFC7700E884AA /* CFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFont.swift; sourceTree = "<group>"; };
 		1D549D3D273EFE6F00E884AA /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		1D549D3F273EFEB100E884AA /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		1D549D41273F039C00E884AA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				1D549D3D273EFE6F00E884AA /* UIColor-Extension.swift */,
+				1D549D41273F039C00E884AA /* UIViewExtensions.swift */,
 			);
 			path = UIKitExtension;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D549CF5273EA87D00E884AA /* AppDelegate.swift in Sources */,
+				1D549D42273F039C00E884AA /* UIViewExtensions.swift in Sources */,
 				1D549D3E273EFE6F00E884AA /* UIColor-Extension.swift in Sources */,
 				1D549D38273EFC7700E884AA /* CFont.swift in Sources */,
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
