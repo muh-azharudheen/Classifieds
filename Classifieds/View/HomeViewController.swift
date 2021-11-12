@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -46,6 +47,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? HomeListCell else { return UICollectionViewCell() }
+        cell.list = lists[indexPath.item]
         return cell
     }
     
@@ -56,13 +58,31 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate { }
 
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    
+    private var numberOfItemsInRow: CGFloat { 2 }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let totalWidth = collectionView.bounds.width - collectionViewMargin.left - collectionViewMargin.right
+        let totalSpacing: CGFloat = (numberOfItemsInRow - 1) * 16
+        let itemWidth = (totalWidth - totalSpacing) / numberOfItemsInRow
+        return CGSize(width: itemWidth, height: itemWidth + 40 + 16)
+    }
+}
+
 private extension HomeViewController {
+    
+    private var collectionViewMargin: UIEdgeInsets {
+        .init(top: 24, left: 24, bottom: 24, right: 24)
+    }
+    
     func createCollectionView() -> UICollectionView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        cv.backgroundColor = .red
+        cv.backgroundColor = .clear
         cv.dataSource = self
         cv.delegate = self
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.contentInset = collectionViewMargin
         cv.register(UINib(nibName: "HomeListCell", bundle: nil), forCellWithReuseIdentifier: "HomeListCell")
         return cv
     }

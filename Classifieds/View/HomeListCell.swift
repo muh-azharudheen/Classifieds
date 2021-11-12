@@ -8,12 +8,31 @@
 import UIKit
 
 class HomeListCell: UICollectionViewCell {
-
+    
+    @IBOutlet private weak var imageView: UIImageView?
+    @IBOutlet private weak var labelTitle: UILabel?
+    @IBOutlet private weak var labelSubTitle: UILabel?
+    
+    var list: List? {
+        didSet {
+            configure(list: list)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        backgroundColor = .yellow
+        backgroundColor = .clear
+        configureImageView()
     }
-
+    
+    // TODO: Implement Image loading from url
+    private func configure(list: List?) {
+        labelTitle?.text = list?.title
+        labelSubTitle?.text = list?.subtitle
+    }
+    
+    private func configureImageView() {
+        imageView?.layer.cornerRadius = 10
+        imageView?.layer.masksToBounds = true
+    }
 }
