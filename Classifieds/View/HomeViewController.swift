@@ -70,8 +70,8 @@ private extension HomeViewController {
         view.addSubview(collectionView)
         
         let stack = UIStackView(arrangedSubviews: [
-                                createLabel(text: "Hello, Dubizzle"),
-                                createLabel(text: "May 12, Sunday")
+                                createLabel(text: "Hello, Dubizzle", size: 24),
+                                createLabel(text: "May 12, Sunday", size: 16)
                                 ])
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -84,7 +84,7 @@ private extension HomeViewController {
             stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         ])
         
-        let newLabel = createLabel(text: listTitle)
+        let newLabel = createLabel(text: listTitle, size: 16)
         view.addSubview(newLabel)
         
         NSLayoutConstraint.activate([
@@ -117,9 +117,10 @@ private extension HomeViewController {
         return cv
     }
     
-    func createLabel(text: String) -> UILabel {
+    func createLabel(text: String, size: CGFloat) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "quicksand", size: size)
         label.text = text
         return label
     }
