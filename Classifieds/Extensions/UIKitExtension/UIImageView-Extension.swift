@@ -8,6 +8,7 @@
 import UIKit
 import ImageCacher
 
+@objc
 extension UIImageView {
     
     func loadImage(with url: URL?) {
