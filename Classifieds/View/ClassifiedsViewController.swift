@@ -11,7 +11,6 @@ struct ListViewModel {
     var title: String
     var subtitle: String
     var imageURL: URL?
-    var thumbNailURL: URL?
 }
 
 class ClassifiedsViewController: UIViewController {
@@ -21,12 +20,26 @@ class ClassifiedsViewController: UIViewController {
     
     private lazy var viewModel = ClassifiedsViewModel()
     
-    var datasource = [ListViewModel]()
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        viewModel.reloadClosure = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        
+        viewModel.showDetailClosure = { [unowned self] in
+            self.showDetailViewController(viewModel: $0)
+        }
+    }
+}
+
+private extension ClassifiedsViewController {
+    
+    func showDetailViewController(viewModel: DetailViewModel) {
+        guard let controller = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        controller.viewModel = viewModel
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -34,19 +47,18 @@ extension ClassifiedsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? HomeListCell else { return UICollectionViewCell() }
-        cell.item = datasource[indexPath.item]
+        cell.item = viewModel.list(index: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasource.count
+        return viewModel.numberOfLists()
     }
 }
 
 extension ClassifiedsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        navigationController?.pushViewController(controller, animated: true)
+        viewModel.didSelectItem(at: indexPath.item)
     }
 }
 
