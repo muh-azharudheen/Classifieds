@@ -28,7 +28,7 @@ extension ClassifiedsAPIResponse.Response {
         guard let id = uid else { return nil }
         let thumbNailURL = createURL(from: image_urls_thumbnails)
         let imageURL = createURL(from: image_urls)
-        return Classified(dateCreated: createdDate(), price: price ?? "", name: name ?? "", id: id, imageURL: imageURL, thumbnailURL: thumbNailURL)
+        return Classified(dateCreated: createdDate(), price: price ?? "", name: name ?? "", id: id, imageId: image_ids?.first, imageURL: imageURL, thumbnailURL: thumbNailURL)
     }
     
     private func createURL(from array: [String]?) -> URL? {
