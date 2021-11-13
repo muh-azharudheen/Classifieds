@@ -19,8 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func initialViewController() -> UIViewController {
-        let controller = HomeViewController(lists: [])
-        controller.title = "Home"
+        let loader = ClassifiedsLoader(serviceProtocol: ServiceManager.shared)
+        let viewModel = ClassifiedsViewModel(loader: loader)
+        let controller = ClassifiedsViewController(viewModel: viewModel)
         return UINavigationController(rootViewController: controller)
     }
 }
