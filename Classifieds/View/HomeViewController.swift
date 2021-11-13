@@ -10,7 +10,7 @@ import UIKit
 struct List {
     var title: String
     var subtitle: String
-    var imageURL: String?
+    var imageURL: URL?
     var thumbNailURL: String?
 }
 
