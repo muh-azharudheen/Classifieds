@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     
     [self setupViews];
+    [self populateView];
 }
 
 -(void) setupViews {
@@ -31,6 +32,10 @@
     self.buttonBuyNow.layer.cornerRadius = self.buttonBuyNow.frame.size.height / 2;
     self.buttonBuyNow.clipsToBounds = YES;
     [self.buttonBuyNow setTitle: @"Buy Now" forState: UIControlStateNormal];
+}
+
+-(void) populateView {
+    
 }
 
 @end

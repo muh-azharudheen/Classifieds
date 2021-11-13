@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *labelSubTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelPrice;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBuyNow;
+@property (nonatomic, strong) DetailViewModel *viewModel;
 
 @end
 
