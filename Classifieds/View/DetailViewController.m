@@ -21,8 +21,16 @@
     [self setupViews];
 }
 
-- (void) setupViews {
-    
+-(void) setupViews {
+    self.labelTitle.font = [UIFont cFontWith: 24];
+    self.labelSubTitle.font = [UIFont cFontWith: 14];
+    self.labelPrice.font =  [UIFont cFontWith: 24];
+    self.buttonBuyNow.titleLabel.font = [UIFont cFontWith: 18];
+    self.buttonBuyNow.backgroundColor = [UIColor primaryTint];
+    [self.buttonBuyNow setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
+    self.buttonBuyNow.layer.cornerRadius = self.buttonBuyNow.frame.size.height / 2;
+    self.buttonBuyNow.clipsToBounds = YES;
+    [self.buttonBuyNow setTitle: @"Buy Now" forState: UIControlStateNormal];
 }
 
 @end
