@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct ListViewModel {
-    var title: String
-    var subtitle: String
-    var imageURL: URL?
-}
-
 class ClassifiedsViewController: UIViewController {
     
     private lazy var collectionView = createCollectionView()
@@ -22,10 +16,29 @@ class ClassifiedsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupViews()
+        configureViewModel()
+        loadLists()
+    }
+}
+
+private extension ClassifiedsViewController {
+    
+    func loadLists() {
+        viewActivityIndicator.startAnimating()
+        viewModel.loadLists()
+    }
+    
+    func didUpdateLists() {
+        viewActivityIndicator.stopAnimating()
+        collectionView.reloadData()
+    }
+    
+    func configureViewModel() {
         
         viewModel.reloadClosure = { [weak self] in
-            self?.collectionView.reloadData()
+            self?.didUpdateLists()
         }
         
         viewModel.showDetailClosure = { [unowned self] in
@@ -102,7 +115,6 @@ private extension ClassifiedsViewController {
         
         view.addSubview(viewActivityIndicator)
         viewActivityIndicator.setCenter(to: view)
-        viewActivityIndicator.isHidden = true
         
         navigationController?.navigationBar.isHidden = true
     }
@@ -143,7 +155,7 @@ private extension ClassifiedsViewController {
     
     func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.hidesWhenStopped = false
+        activityIndicator.hidesWhenStopped = true
         return activityIndicator
     }
 }

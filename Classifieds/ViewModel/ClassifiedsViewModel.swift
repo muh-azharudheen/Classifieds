@@ -11,10 +11,6 @@ class ClassifiedsViewModel {
     
     private var classifieds = [Classified]()
     
-    init() {
-        classifieds = createClassifieds()
-    }
-    
     var reloadClosure: (() -> Void)?
     
     var showDetailClosure: ((DetailViewModel) -> Void)?
@@ -36,6 +32,18 @@ class ClassifiedsViewModel {
     func didSelectItem(at index: Int) {
         let item = classifieds[index].createDetailViewModel()
         showDetailClosure?(item)
+    }
+    
+    func loadLists() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.updateLists()
+        }
+    }
+    
+    private func updateLists() {
+        classifieds = createClassifieds()
+        reloadClosure?()
     }
     
     // TODO: to be deleted once api call is over

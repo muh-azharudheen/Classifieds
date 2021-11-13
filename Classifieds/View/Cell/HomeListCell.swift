@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct ListViewModel {
+    var title: String
+    var subtitle: String
+    var imageURL: URL?
+}
+
 class HomeListCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView?
