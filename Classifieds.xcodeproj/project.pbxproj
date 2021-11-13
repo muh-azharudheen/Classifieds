@@ -215,7 +215,6 @@
 			children = (
 				1D549CF4273EA87D00E884AA /* AppDelegate.swift */,
 				1D549CF6273EA87D00E884AA /* SceneDelegate.swift */,
-				1D79D280274000C600EFB3D9 /* Result.swift */,
 				1D79D28927400FFF00EFB3D9 /* APIResponses */,
 				1D79D2842740068C00EFB3D9 /* ServiceManager */,
 				1D79D27D273FFFD900EFB3D9 /* Loader */,
@@ -224,8 +223,6 @@
 				1D549D26273EC82000E884AA /* View */,
 				1D549D52273F7D4E00E884AA /* ViewModel */,
 				1D549D2D273EF9C000E884AA /* Font */,
-				1D549D49273F172F00E884AA /* Classifieds-Bridging-Header.h */,
-				1D549D02273EA87F00E884AA /* Info.plist */,
 				1D79D25A273FB99800EFB3D9 /* Supporting Files */,
 			);
 			path = Classifieds;
@@ -340,6 +337,8 @@
 		1D79D25A273FB99800EFB3D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D549D02273EA87F00E884AA /* Info.plist */,
+				1D549D49273F172F00E884AA /* Classifieds-Bridging-Header.h */,
 				1D549CFD273EA87F00E884AA /* Assets.xcassets */,
 				1D549D3F273EFEB100E884AA /* Color.xcassets */,
 				1D79D25F273FB9C400EFB3D9 /* Localizable.strings */,
@@ -350,6 +349,7 @@
 		1D79D26F273FD73200EFB3D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D79D280274000C600EFB3D9 /* Result.swift */,
 				1D79D270273FD74500EFB3D9 /* Classified.swift */,
 			);
 			path = Model;
@@ -831,14 +831,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Classifieds/Info.plist;
+				INFOPLIST_FILE = "Classifieds/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dubizzle.Classifieds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Classifieds/Classifieds-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classifieds/Supporting Files/Classifieds-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -853,14 +853,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Classifieds/Info.plist;
+				INFOPLIST_FILE = "Classifieds/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dubizzle.Classifieds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Classifieds/Classifieds-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classifieds/Supporting Files/Classifieds-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
