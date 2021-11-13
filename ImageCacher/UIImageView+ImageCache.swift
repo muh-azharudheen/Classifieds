@@ -11,19 +11,23 @@ let imageCache = NSCache<NSString, UIImage>()
 
 public extension UIImageView {
     
-    func loadImageUsingCache(url: URL?) {
-        guard let url = url else { return }
-        image = nil
+    func loadImageUsingCache(url: URL?, placeholder: UIImage?) {
+        guard let url = url else {
+            image = placeholder
+            return
+        }
 
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString)  {
             image = cachedImage
             return
         }
 
+        image = nil
+        
         URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
             guard error == nil else {
                 DispatchQueue.main.async {
-                    self?.image = nil
+                    self?.image = placeholder
                 }
                 return
             }
