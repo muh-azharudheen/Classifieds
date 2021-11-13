@@ -11,7 +11,7 @@ struct List {
     var title: String
     var subtitle: String
     var imageURL: URL?
-    var thumbNailURL: String?
+    var thumbNailURL: URL?
 }
 
 struct HomeUIModel {
