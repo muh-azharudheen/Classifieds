@@ -12,13 +12,13 @@ class ClassifiedsViewController: UIViewController {
     private (set) lazy var collectionView = createCollectionView()
     private lazy var viewActivityIndicator = createActivityIndicator()
     
-    private var viewModel: ClassifiedsViewModelProtocol
+    private var viewModel: ClassifiedsViewModel
     
     private (set) lazy var labelTitle = createLabel(text: viewModel.title, size: 24, color: .secondaryDark)
     private (set) lazy var labelSubTitle = createLabel(text: viewModel.subTitle, size: 16, color: .primaryLight)
     private (set) lazy var labelListingTitle = createLabel(text: viewModel.listTitle, size: 16, color: .primaryDark)
     
-    init(viewModel: ClassifiedsViewModelProtocol) {
+    init(viewModel: ClassifiedsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
