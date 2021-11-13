@@ -29,6 +29,7 @@ class HomeListCell: UICollectionViewCell {
     private func configure(list: List?) {
         labelTitle?.text = list?.title
         labelSubTitle?.text = list?.subtitle
+        imageView?.loadImage(with: list?.thumbNailURL)
     }
     
     private func setupViews() {
