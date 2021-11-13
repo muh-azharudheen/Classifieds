@@ -18,6 +18,10 @@ class ClassifiedsLoader: ClassifiedsLoaderProtocol {
     
     func loadClassified(completion: @escaping (Result<[Classified]>) -> Void) {
         guard let request = urlRequest() else { return }
+        load(request: request, completion: completion)
+    }
+    
+    private func load(request: URLRequest, completion: @escaping (Result<[Classified]>) -> Void) {
         serviceProtocol.request(request: request) { (result: Result<ClassifiedsAPIResponse>) in
             switch result {
             case .success(let response):
