@@ -42,6 +42,7 @@
 		1D79D2862740069A00EFB3D9 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D2852740069A00EFB3D9 /* APIServiceProtocol.swift */; };
 		1D79D288274006AC00EFB3D9 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D287274006AC00EFB3D9 /* ServiceManager.swift */; };
 		1D79D28B2740101100EFB3D9 /* ClassifiedsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D28A2740101100EFB3D9 /* ClassifiedsAPIResponse.swift */; };
+		1D79D28D27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D28C27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		1D79D2852740069A00EFB3D9 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		1D79D287274006AC00EFB3D9 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		1D79D28A2740101100EFB3D9 /* ClassifiedsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsAPIResponse.swift; sourceTree = "<group>"; };
+		1D79D28C27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */,
+				1D79D28C27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift */,
 				1D549D0D273EA87F00E884AA /* Info.plist */,
 			);
 			path = ClassifiedsTests;
@@ -627,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D549D0C273EA87F00E884AA /* ClassifiedsTests.swift in Sources */,
+				1D79D28D27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

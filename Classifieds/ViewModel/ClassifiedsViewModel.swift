@@ -73,7 +73,7 @@ private extension Classified {
     }
 }
 
-private extension Date {
+extension Date {
     func toString() -> String {
         let formatter = DateFormatter()
         formatter.locale = Locale.current

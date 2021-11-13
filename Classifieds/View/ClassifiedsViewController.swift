@@ -9,10 +9,14 @@ import UIKit
 
 class ClassifiedsViewController: UIViewController {
     
-    private lazy var collectionView = createCollectionView()
+    private (set) lazy var collectionView = createCollectionView()
     private lazy var viewActivityIndicator = createActivityIndicator()
     
     private var viewModel: ClassifiedsViewModelProtocol
+    
+    private (set) lazy var labelTitle = createLabel(text: viewModel.title, size: 24, color: .secondaryDark)
+    private (set) lazy var labelSubTitle = createLabel(text: viewModel.subTitle, size: 16, color: .primaryLight)
+    private (set) lazy var labelListingTitle = createLabel(text: viewModel.listTitle, size: 16, color: .primaryDark)
     
     init(viewModel: ClassifiedsViewModelProtocol) {
         self.viewModel = viewModel
@@ -108,7 +112,6 @@ private extension ClassifiedsViewController {
                    top: view.safeAreaLayoutGuide.topAnchor,
                    insets: .init(top: 24, left: 24, bottom: 0, right: 24))
         
-        let labelListingTitle = createLabel(text: viewModel.listTitle, size: 16, color: .primaryDark)
         view.addSubview(labelListingTitle)
         
         labelListingTitle.fill(leading: stack.leadingAnchor,
@@ -133,10 +136,7 @@ private extension ClassifiedsViewController {
     }
     
     private func createStackView() -> UIStackView {
-        let sv = UIStackView(arrangedSubviews: [
-                                createLabel(text: viewModel.title, size: 24, color: .secondaryDark),
-                                createLabel(text: viewModel.subTitle, size: 16, color: .primaryLight)
-                                ])
+        let sv = UIStackView(arrangedSubviews: [labelTitle, labelSubTitle])
         sv.axis = .vertical
         sv.spacing = 5
         return sv
