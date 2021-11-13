@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import ImageCacher
 
 extension UIImageView {
     
     func loadImage(with url: URL?) {
-        
+        loadImageUsingCache(url: url)
     }
 }

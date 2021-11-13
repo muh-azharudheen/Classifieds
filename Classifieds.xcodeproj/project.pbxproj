@@ -30,6 +30,7 @@
 		1D549D78273F934C00E884AA /* ImageCacher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D549D68273F934B00E884AA /* ImageCacher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D549D7B273F934C00E884AA /* ImageCacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; };
 		1D549D7C273F934C00E884AA /* ImageCacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D549D87273F93D100E884AA /* UIImageView+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		1D549D6E273F934C00E884AA /* ImageCacherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCacherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D549D75273F934C00E884AA /* ImageCacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacherTests.swift; sourceTree = "<group>"; };
 		1D549D77273F934C00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageCache.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				1D549D68273F934B00E884AA /* ImageCacher.h */,
+				1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */,
 				1D549D69273F934B00E884AA /* Info.plist */,
 			);
 			path = ImageCacher;
@@ -545,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D549D87273F93D100E884AA /* UIImageView+ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +721,7 @@
 		1D549D1C273EA87F00E884AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -738,6 +743,7 @@
 		1D549D1D273EA87F00E884AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -893,6 +899,7 @@
 		1D549D82273F934C00E884AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ImageCacherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -911,6 +918,7 @@
 		1D549D83273F934C00E884AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ImageCacherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
