@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ClassifiedsViewModel {
+class ClassifiedsViewModel: ClassifiedsViewModelProtocol {
     
     private var classifieds = [Classified]()
     

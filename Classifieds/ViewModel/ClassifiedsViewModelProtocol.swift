@@ -12,6 +12,7 @@ protocol ClassifiedsViewModelProtocol {
     var showDetailClosure: ((DetailViewModel) -> Void)? { get set }
     var title: String { get }
     var subTitle: String { get }
+    var listTitle: String { get }
     
     func numberOfLists() -> Int
     func list(index: Int) -> ListViewModel

@@ -12,7 +12,16 @@ class ClassifiedsViewController: UIViewController {
     private lazy var collectionView = createCollectionView()
     private lazy var viewActivityIndicator = createActivityIndicator()
     
-    private lazy var viewModel = ClassifiedsViewModel()
+    private var viewModel: ClassifiedsViewModelProtocol
+    
+    init(viewModel: ClassifiedsViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
