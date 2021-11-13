@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     
     private var uiModel: HomeUIModel
     
-    private var datasource = [List]()
+    var datasource = [List]()
     
     init(uiModel: HomeUIModel) {
         self.uiModel = uiModel
@@ -57,7 +57,12 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate { }
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        navigationController?.pushViewController(controller, animated: true)
+    }
+}
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
@@ -99,7 +104,8 @@ private extension HomeViewController {
         
         view.addSubview(viewActivityIndicator)
         viewActivityIndicator.setCenter(to: view)
-        viewActivityIndicator.startAnimating()
+        viewActivityIndicator.isHidden = true
+//        viewActivityIndicator.startAnimating()
         
         navigationController?.navigationBar.isHidden = true
     }

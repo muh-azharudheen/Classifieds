@@ -37,5 +37,8 @@
 -(void) populateView {
     
 }
+- (IBAction)tapActionBackButton:(id)sender {
+    [self.navigationController popViewControllerAnimated: YES];
+}
 
 @end

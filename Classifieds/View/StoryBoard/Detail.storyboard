@@ -71,6 +71,9 @@
                                     <constraint firstAttribute="height" constant="35" id="alj-Bs-58c"/>
                                 </constraints>
                                 <state key="normal" title=" " image="button_back"/>
+                                <connections>
+                                    <action selector="tapActionBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dkv-nZ-AP3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
