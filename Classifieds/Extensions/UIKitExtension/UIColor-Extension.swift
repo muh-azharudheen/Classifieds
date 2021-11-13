@@ -22,3 +22,8 @@ extension UIColor {
     }
 }
 
+@objc extension UIColor {
+    static var primaryTint: UIColor {
+        UIColor(named: "primaryTintColor") ?? .black
+    }
+}
