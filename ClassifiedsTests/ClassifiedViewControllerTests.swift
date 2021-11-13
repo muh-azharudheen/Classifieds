@@ -9,9 +9,8 @@ import XCTest
 @testable import Classifieds
 
 class ClassifiedViewControllerTests: XCTestCase {
-
-    private lazy var viewModel = ClassifiedsViewModel(loader: loader)
-    private lazy var loader = createLoader()
+    
+    private lazy var loader = MockLoader()
     
     func testTopLabels() {
         let sut = makeSUT()
@@ -23,15 +22,49 @@ class ClassifiedViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.labelListingTitle.text, "home.listing.title".localized)
     }
     
-    func makeSUT() -> ClassifiedsViewController {
-        ClassifiedsViewController(viewModel: viewModel)
+    func test_datasourceIsEmptyWhenClassifiedsAreLoading() {
+        
+        let sut = makeSUT()
+        _ = sut.view
+        
+        XCTAssertEqual(sut.collectionView.numberOfSections, 1)
+        XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 0)
     }
     
-    func createLoader() -> ClassifiedsLoaderProtocol {
-        MockLoader()
+    func test_datasourceWhenLoadingFinished() {
+        
+        let sut = makeSUT()
+        _ = sut.view
+        
+        loader.classifieds = [
+            .init(dateCreated: Date(), price: "AED 500", name: "Note Book", id: "1", imageId: nil, imageURL: nil, thumbnailURL: nil)
+        ]
+        
+        loader.finishLodingClosure?()
+        XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 1)
+        
+        loader.classifieds = [
+            .init(dateCreated: Date(), price: "AED 500", name: "Note Book", id: "1", imageId: nil, imageURL: nil, thumbnailURL: nil),
+            .init(dateCreated: Date(), price: "AED 200", name: "Text", id: "2", imageId: nil, imageURL: nil, thumbnailURL: nil)
+        ]
+        loader.finishLodingClosure?()
+        XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 2)
+    }
+    
+    func makeSUT(classifieds: [Classified] = []) -> ClassifiedsViewController {
+        let viewModel = ClassifiedsViewModel(loader: loader)
+        return ClassifiedsViewController(viewModel: viewModel)
     }
 }
 
 private class MockLoader: ClassifiedsLoaderProtocol {
-    func loadClassified(completion: @escaping (Result<[Classified]>) -> Void) { }
+    
+    var classifieds = [Classified]()
+    var finishLodingClosure: (()-> Void)?
+        
+    func loadClassified(completion: @escaping (Result<[Classified]>) -> Void) {
+        finishLodingClosure = {
+            completion(.success(self.classifieds))
+        }
+    }
 }
