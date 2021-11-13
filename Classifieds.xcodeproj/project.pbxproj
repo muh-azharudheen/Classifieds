@@ -33,6 +33,7 @@
 		1D549D87273F93D100E884AA /* UIImageView+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */; };
 		1D79D25D273FB9C400EFB3D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D79D25F273FB9C400EFB3D9 /* Localizable.strings */; };
 		1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D270273FD74500EFB3D9 /* Classified.swift */; };
+		1D79D273273FD8D600EFB3D9 /* ClassifiedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		1D79D25E273FB9C400EFB3D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D79D260273FB9D400EFB3D9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D79D270273FD74500EFB3D9 /* Classified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classified.swift; sourceTree = "<group>"; };
+		1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 			children = (
 				1D549D5C273F820500E884AA /* DetailViewModel.h */,
 				1D549D5D273F820500E884AA /* DetailViewModel.m */,
+				1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				1D549D4C273F172F00E884AA /* DetailViewController.m in Sources */,
 				1D549D38273EFC7700E884AA /* CFont.swift in Sources */,
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
+				1D79D273273FD8D600EFB3D9 /* ClassifiedsViewModel.swift in Sources */,
 				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
 				1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */,
 				1D549D60273F91F400E884AA /* UIImageView-Extension.swift in Sources */,

@@ -14,29 +14,15 @@ struct ListViewModel {
     var thumbNailURL: URL?
 }
 
-struct ClassifiedsViewModel {
-    let title: String
-    let subTitle: String
-    let listTitle: String
-}
-
 class ClassifiedsViewController: UIViewController {
     
     private lazy var collectionView = createCollectionView()
     private lazy var viewActivityIndicator = createActivityIndicator()
     
-    private var uiModel: ClassifiedsViewModel
+    private lazy var viewModel = ClassifiedsViewModel()
     
     var datasource = [ListViewModel]()
-    
-    init(uiModel: ClassifiedsViewModel) {
-        self.uiModel = uiModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +74,7 @@ private extension ClassifiedsViewController {
                    top: view.safeAreaLayoutGuide.topAnchor,
                    insets: .init(top: 24, left: 24, bottom: 0, right: 24))
         
-        let labelListingTitle = createLabel(text: uiModel.listTitle, size: 16, color: .primaryDark)
+        let labelListingTitle = createLabel(text: viewModel.listTitle, size: 16, color: .primaryDark)
         view.addSubview(labelListingTitle)
         
         labelListingTitle.fill(leading: stack.leadingAnchor,
@@ -115,8 +101,8 @@ private extension ClassifiedsViewController {
     
     private func createStackView() -> UIStackView {
         let sv = UIStackView(arrangedSubviews: [
-                                createLabel(text: uiModel.title, size: 24, color: .secondaryDark),
-                                createLabel(text: uiModel.subTitle, size: 16, color: .primaryLight)
+                                createLabel(text: viewModel.title, size: 24, color: .secondaryDark),
+                                createLabel(text: viewModel.subTitle, size: 16, color: .primaryLight)
                                 ])
         sv.axis = .vertical
         sv.spacing = 5
