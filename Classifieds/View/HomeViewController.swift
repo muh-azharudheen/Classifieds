@@ -105,7 +105,6 @@ private extension HomeViewController {
         view.addSubview(viewActivityIndicator)
         viewActivityIndicator.setCenter(to: view)
         viewActivityIndicator.isHidden = true
-//        viewActivityIndicator.startAnimating()
         
         navigationController?.navigationBar.isHidden = true
     }

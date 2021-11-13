@@ -195,14 +195,11 @@
 			children = (
 				1D549CF4273EA87D00E884AA /* AppDelegate.swift */,
 				1D549CF6273EA87D00E884AA /* SceneDelegate.swift */,
-				1D549D52273F7D4E00E884AA /* Model */,
+				1D549D52273F7D4E00E884AA /* ViewModel */,
 				1D549D39273EFE4500E884AA /* Extensions */,
 				1D549D26273EC82000E884AA /* View */,
 				1D549D2D273EF9C000E884AA /* Font */,
 				1D549D49273F172F00E884AA /* Classifieds-Bridging-Header.h */,
-				1D549CFD273EA87F00E884AA /* Assets.xcassets */,
-				1D549D3F273EFEB100E884AA /* Color.xcassets */,
-				1D549CFF273EA87F00E884AA /* LaunchScreen.storyboard */,
 				1D549D02273EA87F00E884AA /* Info.plist */,
 				1D79D25A273FB99800EFB3D9 /* Supporting Files */,
 			);
@@ -230,6 +227,7 @@
 		1D549D26273EC82000E884AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D549CFF273EA87F00E884AA /* LaunchScreen.storyboard */,
 				1D549D4D273F180600E884AA /* StoryBoard */,
 				1D549D2B273EF97000E884AA /* Cell */,
 				1D549D24273EAD2900E884AA /* HomeViewController.swift */,
@@ -283,13 +281,13 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
-		1D549D52273F7D4E00E884AA /* Model */ = {
+		1D549D52273F7D4E00E884AA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				1D549D5C273F820500E884AA /* DetailViewModel.h */,
 				1D549D5D273F820500E884AA /* DetailViewModel.m */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1D549D67273F934B00E884AA /* ImageCacher */ = {
@@ -314,6 +312,8 @@
 		1D79D25A273FB99800EFB3D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1D549CFD273EA87F00E884AA /* Assets.xcassets */,
+				1D549D3F273EFEB100E884AA /* Color.xcassets */,
 				1D79D25F273FB9C400EFB3D9 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
