@@ -31,7 +31,8 @@
     [self.buttonBuyNow setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
     self.buttonBuyNow.layer.cornerRadius = self.buttonBuyNow.frame.size.height / 2;
     self.buttonBuyNow.clipsToBounds = YES;
-    [self.buttonBuyNow setTitle: @"Buy Now" forState: UIControlStateNormal];
+    NSString *buttonTitle = NSLocalizedString(@"button.buy.now.title", @"");
+    [self.buttonBuyNow setTitle: buttonTitle forState: UIControlStateNormal];
 }
 
 -(void) populateView {
