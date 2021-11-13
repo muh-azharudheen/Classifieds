@@ -13,9 +13,9 @@ class HomeListCell: UICollectionViewCell {
     @IBOutlet private weak var labelTitle: UILabel?
     @IBOutlet private weak var labelSubTitle: UILabel?
     
-    var list: List? {
+    var item: ListViewModel? {
         didSet {
-            configure(list: list)
+            configure(list: item)
         }
     }
     
@@ -26,7 +26,7 @@ class HomeListCell: UICollectionViewCell {
     }
     
     // TODO: Implement Image loading from url
-    private func configure(list: List?) {
+    private func configure(list: ListViewModel?) {
         labelTitle?.text = list?.title
         labelSubTitle?.text = list?.subtitle
         imageView?.loadImage(with: list?.thumbNailURL)

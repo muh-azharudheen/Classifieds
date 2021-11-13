@@ -13,7 +13,7 @@
 		1D549D01273EA87F00E884AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D549CFF273EA87F00E884AA /* LaunchScreen.storyboard */; };
 		1D549D0C273EA87F00E884AA /* ClassifiedsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */; };
 		1D549D17273EA87F00E884AA /* ClassifiedsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D16273EA87F00E884AA /* ClassifiedsUITests.swift */; };
-		1D549D25273EAD2900E884AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D24273EAD2900E884AA /* HomeViewController.swift */; };
+		1D549D25273EAD2900E884AA /* ClassifiedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */; };
 		1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D27273EC85000E884AA /* HomeListCell.swift */; };
 		1D549D2A273EC85000E884AA /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D28273EC85000E884AA /* HomeListCell.xib */; };
 		1D549D35273EFBF000E884AA /* quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D34273EFBF000E884AA /* quicksand.ttf */; };
@@ -99,7 +99,7 @@
 		1D549D12273EA87F00E884AA /* ClassifiedsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassifiedsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D549D16273EA87F00E884AA /* ClassifiedsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsUITests.swift; sourceTree = "<group>"; };
 		1D549D18273EA87F00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D549D24273EAD2900E884AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewController.swift; sourceTree = "<group>"; };
 		1D549D27273EC85000E884AA /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		1D549D28273EC85000E884AA /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		1D549D34273EFBF000E884AA /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicksand.ttf; sourceTree = "<group>"; };
@@ -195,6 +195,7 @@
 			children = (
 				1D549CF4273EA87D00E884AA /* AppDelegate.swift */,
 				1D549CF6273EA87D00E884AA /* SceneDelegate.swift */,
+				1D79D264273FCDDA00EFB3D9 /* Loader */,
 				1D549D52273F7D4E00E884AA /* ViewModel */,
 				1D549D39273EFE4500E884AA /* Extensions */,
 				1D549D26273EC82000E884AA /* View */,
@@ -230,7 +231,7 @@
 				1D549CFF273EA87F00E884AA /* LaunchScreen.storyboard */,
 				1D549D4D273F180600E884AA /* StoryBoard */,
 				1D549D2B273EF97000E884AA /* Cell */,
-				1D549D24273EAD2900E884AA /* HomeViewController.swift */,
+				1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */,
 				1D549D4A273F172F00E884AA /* DetailViewController.h */,
 				1D549D4B273F172F00E884AA /* DetailViewController.m */,
 			);
@@ -317,6 +318,13 @@
 				1D79D25F273FB9C400EFB3D9 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D79D264273FCDDA00EFB3D9 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,7 +546,7 @@
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
 				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
 				1D549D60273F91F400E884AA /* UIImageView-Extension.swift in Sources */,
-				1D549D25273EAD2900E884AA /* HomeViewController.swift in Sources */,
+				1D549D25273EAD2900E884AA /* ClassifiedsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

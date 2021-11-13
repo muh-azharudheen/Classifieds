@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ClassifiedsViewController.swift
 //  Classifieds
 //
 //  Created by Muhammed Azharudheen on 12/11/2021.
@@ -7,29 +7,29 @@
 
 import UIKit
 
-struct List {
+struct ListViewModel {
     var title: String
     var subtitle: String
     var imageURL: URL?
     var thumbNailURL: URL?
 }
 
-struct HomeUIModel {
+struct ClassifiedsViewModel {
     let title: String
     let subTitle: String
     let listTitle: String
 }
 
-class HomeViewController: UIViewController {
+class ClassifiedsViewController: UIViewController {
     
     private lazy var collectionView = createCollectionView()
     private lazy var viewActivityIndicator = createActivityIndicator()
     
-    private var uiModel: HomeUIModel
+    private var uiModel: ClassifiedsViewModel
     
-    var datasource = [List]()
+    var datasource = [ListViewModel]()
     
-    init(uiModel: HomeUIModel) {
+    init(uiModel: ClassifiedsViewModel) {
         self.uiModel = uiModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,11 +44,11 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension ClassifiedsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? HomeListCell else { return UICollectionViewCell() }
-        cell.list = datasource[indexPath.item]
+        cell.item = datasource[indexPath.item]
         return cell
     }
     
@@ -57,14 +57,14 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
+extension ClassifiedsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         navigationController?.pushViewController(controller, animated: true)
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension ClassifiedsViewController: UICollectionViewDelegateFlowLayout {
     
     private var numberOfItemsInRow: CGFloat { 2 }
     
@@ -76,7 +76,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-private extension HomeViewController {
+private extension ClassifiedsViewController {
     
     func setupViews() {
         view.backgroundColor = .white
