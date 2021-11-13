@@ -29,7 +29,7 @@ class ClassifiedsViewModel {
         classifieds[index].createListViewModel()
     }
     
-    func didSelectItem(at index: Int) {
+    func selectItem(at index: Int) {
         let item = classifieds[index].createDetailViewModel()
         showDetailClosure?(item)
     }

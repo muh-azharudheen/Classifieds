@@ -35,6 +35,7 @@
 		1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D270273FD74500EFB3D9 /* Classified.swift */; };
 		1D79D273273FD8D600EFB3D9 /* ClassifiedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */; };
 		1D79D276273FE25A00EFB3D9 /* String-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D275273FE25A00EFB3D9 /* String-Extension.swift */; };
+		1D79D278273FF1E900EFB3D9 /* ClassifiedsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D277273FF1E900EFB3D9 /* ClassifiedsViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		1D79D270273FD74500EFB3D9 /* Classified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classified.swift; sourceTree = "<group>"; };
 		1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewModel.swift; sourceTree = "<group>"; };
 		1D79D275273FE25A00EFB3D9 /* String-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Extension.swift"; sourceTree = "<group>"; };
+		1D79D277273FF1E900EFB3D9 /* ClassifiedsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 			children = (
 				1D549D5C273F820500E884AA /* DetailViewModel.h */,
 				1D549D5D273F820500E884AA /* DetailViewModel.m */,
+				1D79D277273FF1E900EFB3D9 /* ClassifiedsViewModelProtocol.swift */,
 				1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -565,6 +568,7 @@
 				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
 				1D79D276273FE25A00EFB3D9 /* String-Extension.swift in Sources */,
 				1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */,
+				1D79D278273FF1E900EFB3D9 /* ClassifiedsViewModelProtocol.swift in Sources */,
 				1D549D60273F91F400E884AA /* UIImageView-Extension.swift in Sources */,
 				1D549D25273EAD2900E884AA /* ClassifiedsViewController.swift in Sources */,
 			);

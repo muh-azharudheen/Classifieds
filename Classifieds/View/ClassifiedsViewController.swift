@@ -71,7 +71,7 @@ extension ClassifiedsViewController: UICollectionViewDataSource {
 
 extension ClassifiedsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.didSelectItem(at: indexPath.item)
+        viewModel.selectItem(at: indexPath.item)
     }
 }
 
