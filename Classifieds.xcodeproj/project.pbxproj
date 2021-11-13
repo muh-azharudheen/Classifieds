@@ -41,6 +41,7 @@
 		1D79D283274000E800EFB3D9 /* ClassifiedsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D282274000E800EFB3D9 /* ClassifiedsLoader.swift */; };
 		1D79D2862740069A00EFB3D9 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D2852740069A00EFB3D9 /* APIServiceProtocol.swift */; };
 		1D79D288274006AC00EFB3D9 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D287274006AC00EFB3D9 /* ServiceManager.swift */; };
+		1D79D28B2740101100EFB3D9 /* ClassifiedsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D28A2740101100EFB3D9 /* ClassifiedsAPIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		1D79D282274000E800EFB3D9 /* ClassifiedsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsLoader.swift; sourceTree = "<group>"; };
 		1D79D2852740069A00EFB3D9 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		1D79D287274006AC00EFB3D9 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		1D79D28A2740101100EFB3D9 /* ClassifiedsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsAPIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				1D549CF4273EA87D00E884AA /* AppDelegate.swift */,
 				1D549CF6273EA87D00E884AA /* SceneDelegate.swift */,
 				1D79D280274000C600EFB3D9 /* Result.swift */,
+				1D79D28927400FFF00EFB3D9 /* APIResponses */,
 				1D79D2842740068C00EFB3D9 /* ServiceManager */,
 				1D79D27D273FFFD900EFB3D9 /* Loader */,
 				1D549D39273EFE4500E884AA /* Extensions */,
@@ -376,6 +379,14 @@
 				1D79D287274006AC00EFB3D9 /* ServiceManager.swift */,
 			);
 			path = ServiceManager;
+			sourceTree = "<group>";
+		};
+		1D79D28927400FFF00EFB3D9 /* APIResponses */ = {
+			isa = PBXGroup;
+			children = (
+				1D79D28A2740101100EFB3D9 /* ClassifiedsAPIResponse.swift */,
+			);
+			path = APIResponses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +605,7 @@
 				1D549D42273F039C00E884AA /* UIViewExtensions.swift in Sources */,
 				1D549D3E273EFE6F00E884AA /* UIColor-Extension.swift in Sources */,
 				1D79D283274000E800EFB3D9 /* ClassifiedsLoader.swift in Sources */,
+				1D79D28B2740101100EFB3D9 /* ClassifiedsAPIResponse.swift in Sources */,
 				1D549D4C273F172F00E884AA /* DetailViewController.m in Sources */,
 				1D549D38273EFC7700E884AA /* CFont.swift in Sources */,
 				1D79D281274000C600EFB3D9 /* Result.swift in Sources */,
