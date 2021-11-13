@@ -12,15 +12,15 @@ class Classified {
     var dateCreated: Date
     var price: String
     var name: String
-    var uuid: UUID
+    var id: String
     var imageURL: URL?
     var thumbnailURL: URL?
     
-    init(dateCreated: Date, price: String, name: String, uuid: UUID, imageURL: URL?, thumbnailURL: URL?) {
+    init(dateCreated: Date, price: String, name: String, id: String, imageURL: URL?, thumbnailURL: URL?) {
         self.dateCreated = dateCreated
         self.price = price
         self.name = name
-        self.uuid = uuid
+        self.id = id
         self.imageURL = imageURL
         self.thumbnailURL = thumbnailURL
     }
