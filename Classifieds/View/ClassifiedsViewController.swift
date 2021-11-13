@@ -9,6 +9,9 @@ import UIKit
 
 class ClassifiedsViewController: UIViewController {
     
+    private var cellIdentifier = "ClassifiedListCell"
+    private var classifiedCellNibName: String { cellIdentifier }
+    
     private (set) lazy var collectionView = createCollectionView()
     private lazy var viewActivityIndicator = createActivityIndicator()
     
@@ -83,7 +86,7 @@ private extension ClassifiedsViewController {
 extension ClassifiedsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? ClassifiedListCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ClassifiedListCell else { return UICollectionViewCell() }
         cell.item = viewModel.list(index: indexPath.row)
         return cell
     }
@@ -160,7 +163,7 @@ private extension ClassifiedsViewController {
         cv.delegate = self
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.contentInset = collectionViewMargin
-        cv.register(UINib(nibName: "HomeListCell", bundle: nil), forCellWithReuseIdentifier: "HomeListCell")
+        cv.register(UINib(nibName: classifiedCellNibName, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         return cv
     }
     
