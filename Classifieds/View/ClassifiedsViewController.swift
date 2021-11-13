@@ -72,7 +72,7 @@ private extension ClassifiedsViewController {
 extension ClassifiedsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? HomeListCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCell", for: indexPath) as? ClassifiedListCell else { return UICollectionViewCell() }
         cell.item = viewModel.list(index: indexPath.row)
         return cell
     }

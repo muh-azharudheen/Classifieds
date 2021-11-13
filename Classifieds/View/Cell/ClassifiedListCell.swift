@@ -13,11 +13,11 @@ struct ListViewModel {
     var imageURL: URL?
 }
 
-class HomeListCell: UICollectionViewCell {
+class ClassifiedListCell: UICollectionViewCell {
     
-    @IBOutlet private weak var imageView: UIImageView?
-    @IBOutlet private weak var labelTitle: UILabel?
-    @IBOutlet private weak var labelSubTitle: UILabel?
+    @IBOutlet private (set) weak var imageView: UIImageView?
+    @IBOutlet private (set) weak var labelTitle: UILabel?
+    @IBOutlet private (set) weak var labelSubTitle: UILabel?
     
     var item: ListViewModel? {
         didSet {

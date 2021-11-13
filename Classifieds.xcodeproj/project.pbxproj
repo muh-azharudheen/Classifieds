@@ -14,7 +14,7 @@
 		1D549D0C273EA87F00E884AA /* ClassifiedsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */; };
 		1D549D17273EA87F00E884AA /* ClassifiedsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D16273EA87F00E884AA /* ClassifiedsUITests.swift */; };
 		1D549D25273EAD2900E884AA /* ClassifiedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */; };
-		1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D27273EC85000E884AA /* HomeListCell.swift */; };
+		1D549D29273EC85000E884AA /* ClassifiedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D27273EC85000E884AA /* ClassifiedListCell.swift */; };
 		1D549D2A273EC85000E884AA /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D28273EC85000E884AA /* HomeListCell.xib */; };
 		1D549D35273EFBF000E884AA /* quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D34273EFBF000E884AA /* quicksand.ttf */; };
 		1D549D38273EFC7700E884AA /* CFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D37273EFC7700E884AA /* CFont.swift */; };
@@ -111,7 +111,7 @@
 		1D549D16273EA87F00E884AA /* ClassifiedsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsUITests.swift; sourceTree = "<group>"; };
 		1D549D18273EA87F00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewController.swift; sourceTree = "<group>"; };
-		1D549D27273EC85000E884AA /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
+		1D549D27273EC85000E884AA /* ClassifiedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedListCell.swift; sourceTree = "<group>"; };
 		1D549D28273EC85000E884AA /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		1D549D34273EFBF000E884AA /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicksand.ttf; sourceTree = "<group>"; };
 		1D549D37273EFC7700E884AA /* CFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFont.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 		1D549D2B273EF97000E884AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				1D549D27273EC85000E884AA /* HomeListCell.swift */,
+				1D549D27273EC85000E884AA /* ClassifiedListCell.swift */,
 				1D549D28273EC85000E884AA /* HomeListCell.xib */,
 			);
 			path = Cell;
@@ -614,7 +614,7 @@
 				1D79D281274000C600EFB3D9 /* Result.swift in Sources */,
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
 				1D79D273273FD8D600EFB3D9 /* ClassifiedsViewModel.swift in Sources */,
-				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
+				1D549D29273EC85000E884AA /* ClassifiedListCell.swift in Sources */,
 				1D79D276273FE25A00EFB3D9 /* String-Extension.swift in Sources */,
 				1D79D27F273FFFE900EFB3D9 /* ClassifiedsLoaderProtocol.swift in Sources */,
 				1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */,
