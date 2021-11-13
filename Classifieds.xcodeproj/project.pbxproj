@@ -32,6 +32,7 @@
 		1D549D7C273F934C00E884AA /* ImageCacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D549D87273F93D100E884AA /* UIImageView+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */; };
 		1D79D25D273FB9C400EFB3D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D79D25F273FB9C400EFB3D9 /* Localizable.strings */; };
+		1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D270273FD74500EFB3D9 /* Classified.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageCache.swift"; sourceTree = "<group>"; };
 		1D79D25E273FB9C400EFB3D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D79D260273FB9D400EFB3D9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1D79D270273FD74500EFB3D9 /* Classified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classified.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,10 +197,10 @@
 			children = (
 				1D549CF4273EA87D00E884AA /* AppDelegate.swift */,
 				1D549CF6273EA87D00E884AA /* SceneDelegate.swift */,
-				1D79D264273FCDDA00EFB3D9 /* Loader */,
-				1D549D52273F7D4E00E884AA /* ViewModel */,
 				1D549D39273EFE4500E884AA /* Extensions */,
+				1D79D26F273FD73200EFB3D9 /* Model */,
 				1D549D26273EC82000E884AA /* View */,
+				1D549D52273F7D4E00E884AA /* ViewModel */,
 				1D549D2D273EF9C000E884AA /* Font */,
 				1D549D49273F172F00E884AA /* Classifieds-Bridging-Header.h */,
 				1D549D02273EA87F00E884AA /* Info.plist */,
@@ -320,11 +322,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1D79D264273FCDDA00EFB3D9 /* Loader */ = {
+		1D79D26F273FD73200EFB3D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D79D270273FD74500EFB3D9 /* Classified.swift */,
 			);
-			path = Loader;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,6 +548,7 @@
 				1D549D38273EFC7700E884AA /* CFont.swift in Sources */,
 				1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */,
 				1D549D29273EC85000E884AA /* HomeListCell.swift in Sources */,
+				1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */,
 				1D549D60273F91F400E884AA /* UIImageView-Extension.swift in Sources */,
 				1D549D25273EAD2900E884AA /* ClassifiedsViewController.swift in Sources */,
 			);
