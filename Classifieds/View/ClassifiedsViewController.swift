@@ -48,6 +48,13 @@ private extension ClassifiedsViewController {
         collectionView.reloadData()
     }
     
+    func showAlertOnError() {
+        viewActivityIndicator.stopAnimating()
+        let alert = UIAlertController(title: "Error", message: "Unknown Error Occured", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "O.K", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     func configureViewModel() {
         
         viewModel.reloadClosure = { [weak self] in
@@ -56,6 +63,10 @@ private extension ClassifiedsViewController {
         
         viewModel.showDetailClosure = { [unowned self] in
             self.showDetailViewController(viewModel: $0)
+        }
+        
+        viewModel.errorClosure = { [weak self] _ in
+            self?.showAlertOnError()
         }
     }
 }
