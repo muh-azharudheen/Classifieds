@@ -12,7 +12,13 @@ enum CFont {
     
     var fontName: String { "quicksand" }
     
-    func font(with size: CGFloat) -> UIFont? {
-        UIFont(name: fontName, size: size)
+    func font(with size: CGFloat) -> UIFont {
+        UIFont(name: fontName, size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+}
+
+@objc extension UIFont {
+    static func cFont(with size: CGFloat) -> UIFont {
+        CFont.quickSand.font(with: size)
     }
 }
