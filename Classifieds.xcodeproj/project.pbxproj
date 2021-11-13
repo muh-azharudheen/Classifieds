@@ -25,6 +25,11 @@
 		1D549D51273F182700E884AA /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D50273F182700E884AA /* Detail.storyboard */; };
 		1D549D5E273F820500E884AA /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D5D273F820500E884AA /* DetailViewModel.m */; };
 		1D549D60273F91F400E884AA /* UIImageView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D5F273F91F400E884AA /* UIImageView-Extension.swift */; };
+		1D549D6F273F934C00E884AA /* ImageCacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; };
+		1D549D76273F934C00E884AA /* ImageCacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D75273F934C00E884AA /* ImageCacherTests.swift */; };
+		1D549D78273F934C00E884AA /* ImageCacher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D549D68273F934B00E884AA /* ImageCacher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D549D7B273F934C00E884AA /* ImageCacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; };
+		1D549D7C273F934C00E884AA /* ImageCacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,42 @@
 			remoteGlobalIDString = 1D549CF0273EA87D00E884AA;
 			remoteInfo = Classifieds;
 		};
+		1D549D70273F934C00E884AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D549CE9273EA87D00E884AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D549D65273F934B00E884AA;
+			remoteInfo = ImageCacher;
+		};
+		1D549D72273F934C00E884AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D549CE9273EA87D00E884AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D549CF0273EA87D00E884AA;
+			remoteInfo = Classifieds;
+		};
+		1D549D79273F934C00E884AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D549CE9273EA87D00E884AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D549D65273F934B00E884AA;
+			remoteInfo = ImageCacher;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1D549D80273F934C00E884AA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D549D7C273F934C00E884AA /* ImageCacher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D549CF1273EA87D00E884AA /* Classifieds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classifieds.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +112,12 @@
 		1D549D5C273F820500E884AA /* DetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewModel.h; sourceTree = "<group>"; };
 		1D549D5D273F820500E884AA /* DetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
 		1D549D5F273F91F400E884AA /* UIImageView-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView-Extension.swift"; sourceTree = "<group>"; };
+		1D549D66273F934B00E884AA /* ImageCacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageCacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D549D68273F934B00E884AA /* ImageCacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCacher.h; sourceTree = "<group>"; };
+		1D549D69273F934B00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D549D6E273F934C00E884AA /* ImageCacherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCacherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D549D75273F934C00E884AA /* ImageCacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacherTests.swift; sourceTree = "<group>"; };
+		1D549D77273F934C00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D549D7B273F934C00E884AA /* ImageCacher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +143,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D549D63273F934B00E884AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D549D6B273F934C00E884AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D549D6F273F934C00E884AA /* ImageCacher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,6 +167,8 @@
 				1D549CF3273EA87D00E884AA /* Classifieds */,
 				1D549D0A273EA87F00E884AA /* ClassifiedsTests */,
 				1D549D15273EA87F00E884AA /* ClassifiedsUITests */,
+				1D549D67273F934B00E884AA /* ImageCacher */,
+				1D549D74273F934C00E884AA /* ImageCacherTests */,
 				1D549CF2273EA87D00E884AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,6 +179,8 @@
 				1D549CF1273EA87D00E884AA /* Classifieds.app */,
 				1D549D07273EA87F00E884AA /* ClassifiedsTests.xctest */,
 				1D549D12273EA87F00E884AA /* ClassifiedsUITests.xctest */,
+				1D549D66273F934B00E884AA /* ImageCacher.framework */,
+				1D549D6E273F934C00E884AA /* ImageCacherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,7 +286,36 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1D549D67273F934B00E884AA /* ImageCacher */ = {
+			isa = PBXGroup;
+			children = (
+				1D549D68273F934B00E884AA /* ImageCacher.h */,
+				1D549D69273F934B00E884AA /* Info.plist */,
+			);
+			path = ImageCacher;
+			sourceTree = "<group>";
+		};
+		1D549D74273F934C00E884AA /* ImageCacherTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D549D75273F934C00E884AA /* ImageCacherTests.swift */,
+				1D549D77273F934C00E884AA /* Info.plist */,
+			);
+			path = ImageCacherTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1D549D61273F934B00E884AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D549D78273F934C00E884AA /* ImageCacher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		1D549CF0273EA87D00E884AA /* Classifieds */ = {
@@ -230,10 +325,12 @@
 				1D549CED273EA87D00E884AA /* Sources */,
 				1D549CEE273EA87D00E884AA /* Frameworks */,
 				1D549CEF273EA87D00E884AA /* Resources */,
+				1D549D80273F934C00E884AA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1D549D7A273F934C00E884AA /* PBXTargetDependency */,
 			);
 			name = Classifieds;
 			productName = Classifieds;
@@ -276,6 +373,43 @@
 			productReference = 1D549D12273EA87F00E884AA /* ClassifiedsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		1D549D65273F934B00E884AA /* ImageCacher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D549D7D273F934C00E884AA /* Build configuration list for PBXNativeTarget "ImageCacher" */;
+			buildPhases = (
+				1D549D61273F934B00E884AA /* Headers */,
+				1D549D62273F934B00E884AA /* Sources */,
+				1D549D63273F934B00E884AA /* Frameworks */,
+				1D549D64273F934B00E884AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageCacher;
+			productName = ImageCacher;
+			productReference = 1D549D66273F934B00E884AA /* ImageCacher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1D549D6D273F934C00E884AA /* ImageCacherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D549D81273F934C00E884AA /* Build configuration list for PBXNativeTarget "ImageCacherTests" */;
+			buildPhases = (
+				1D549D6A273F934C00E884AA /* Sources */,
+				1D549D6B273F934C00E884AA /* Frameworks */,
+				1D549D6C273F934C00E884AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D549D71273F934C00E884AA /* PBXTargetDependency */,
+				1D549D73273F934C00E884AA /* PBXTargetDependency */,
+			);
+			name = ImageCacherTests;
+			productName = ImageCacherTests;
+			productReference = 1D549D6E273F934C00E884AA /* ImageCacherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -297,6 +431,14 @@
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 1D549CF0273EA87D00E884AA;
 					};
+					1D549D65273F934B00E884AA = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
+					1D549D6D273F934C00E884AA = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 1D549CF0273EA87D00E884AA;
+					};
 				};
 			};
 			buildConfigurationList = 1D549CEC273EA87D00E884AA /* Build configuration list for PBXProject "Classifieds" */;
@@ -315,6 +457,8 @@
 				1D549CF0273EA87D00E884AA /* Classifieds */,
 				1D549D06273EA87F00E884AA /* ClassifiedsTests */,
 				1D549D11273EA87F00E884AA /* ClassifiedsUITests */,
+				1D549D65273F934B00E884AA /* ImageCacher */,
+				1D549D6D273F934C00E884AA /* ImageCacherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +485,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1D549D10273EA87F00E884AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D549D64273F934B00E884AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D549D6C273F934C00E884AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,6 +541,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D549D62273F934B00E884AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D549D6A273F934C00E884AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D549D76273F934C00E884AA /* ImageCacherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -395,6 +568,21 @@
 			isa = PBXTargetDependency;
 			target = 1D549CF0273EA87D00E884AA /* Classifieds */;
 			targetProxy = 1D549D13273EA87F00E884AA /* PBXContainerItemProxy */;
+		};
+		1D549D71273F934C00E884AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D549D65273F934B00E884AA /* ImageCacher */;
+			targetProxy = 1D549D70273F934C00E884AA /* PBXContainerItemProxy */;
+		};
+		1D549D73273F934C00E884AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D549CF0273EA87D00E884AA /* Classifieds */;
+			targetProxy = 1D549D72273F934C00E884AA /* PBXContainerItemProxy */;
+		};
+		1D549D7A273F934C00E884AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D549D65273F934B00E884AA /* ImageCacher */;
+			targetProxy = 1D549D79273F934C00E884AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -647,6 +835,97 @@
 			};
 			name = Release;
 		};
+		1D549D7E273F934C00E884AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ImageCacher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dubizzle.ImageCacher;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1D549D7F273F934C00E884AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ImageCacher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dubizzle.ImageCacher;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1D549D82273F934C00E884AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ImageCacherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dubizzle.ImageCacherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classifieds.app/Classifieds";
+			};
+			name = Debug;
+		};
+		1D549D83273F934C00E884AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ImageCacherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dubizzle.ImageCacherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classifieds.app/Classifieds";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -682,6 +961,24 @@
 			buildConfigurations = (
 				1D549D22273EA87F00E884AA /* Debug */,
 				1D549D23273EA87F00E884AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D549D7D273F934C00E884AA /* Build configuration list for PBXNativeTarget "ImageCacher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D549D7E273F934C00E884AA /* Debug */,
+				1D549D7F273F934C00E884AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D549D81273F934C00E884AA /* Build configuration list for PBXNativeTarget "ImageCacherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D549D82273F934C00E884AA /* Debug */,
+				1D549D83273F934C00E884AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
