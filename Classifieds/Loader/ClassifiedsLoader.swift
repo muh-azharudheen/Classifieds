@@ -7,7 +7,14 @@
 
 import Foundation
 
+
 class ClassifiedsLoader: ClassifiedsLoaderProtocol {
+    
+    private var serviceProtocol: APIServiceProtocol
+    
+    init(serviceProtocol: APIServiceProtocol) {
+        self.serviceProtocol = serviceProtocol
+    }
     
     func loadClassified(completion: @escaping (Result<[Classified]>) -> Void) {
         let items = createClassifieds()
