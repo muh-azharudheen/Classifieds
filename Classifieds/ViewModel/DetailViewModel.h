@@ -13,9 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailViewModel : NSObject
 
-@property (nonatomic, assign) NSString *title;
-@property (nonatomic, assign) NSString *subTitle;
-@property (nonatomic, assign) NSString *price;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subTitle;
+@property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSURL *imageURL;
 
 - (instancetype)initWithTitle:(NSString *)title
                      subTitle:(NSString *)subTitle

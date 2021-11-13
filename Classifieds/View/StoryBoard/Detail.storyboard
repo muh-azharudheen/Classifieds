@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="AeA-Q0-h1G">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AeA-Q0-h1G">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="682"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emB-0j-KqK">
@@ -92,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonBuyNow" destination="wPV-g5-oq7" id="uxI-f6-3Vx"/>
+                        <outlet property="imageView" destination="AeA-Q0-h1G" id="cWu-sO-acy"/>
                         <outlet property="labelPrice" destination="cxW-Lz-dHk" id="4a8-Zh-TzH"/>
                         <outlet property="labelSubTitle" destination="tmL-lE-pSG" id="Dsf-h4-LIA"/>
                         <outlet property="labelTitle" destination="zCB-uh-uAe" id="6O7-le-pb5"/>
@@ -104,7 +105,6 @@
     </scenes>
     <resources>
         <image name="button_back" width="21" height="21"/>
-        <image name="placeholder" width="350" height="350"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
