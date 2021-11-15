@@ -30,6 +30,7 @@
 		1D549D7B273F934C00E884AA /* ImageCacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; };
 		1D549D7C273F934C00E884AA /* ImageCacher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D549D66273F934B00E884AA /* ImageCacher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D549D87273F93D100E884AA /* UIImageView+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */; };
+		1D6B420C2742D64C00BA8FD7 /* DetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B420B2742D64C00BA8FD7 /* DetailViewControllerTest.swift */; };
 		1D79D25D273FB9C400EFB3D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D79D25F273FB9C400EFB3D9 /* Localizable.strings */; };
 		1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D270273FD74500EFB3D9 /* Classified.swift */; };
 		1D79D273273FD8D600EFB3D9 /* ClassifiedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79D272273FD8D600EFB3D9 /* ClassifiedsViewModel.swift */; };
@@ -120,6 +121,7 @@
 		1D549D75273F934C00E884AA /* ImageCacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacherTests.swift; sourceTree = "<group>"; };
 		1D549D77273F934C00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageCache.swift"; sourceTree = "<group>"; };
+		1D6B420B2742D64C00BA8FD7 /* DetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTest.swift; sourceTree = "<group>"; };
 		1D79D25E273FB9C400EFB3D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D79D260273FB9D400EFB3D9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D79D270273FD74500EFB3D9 /* Classified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classified.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */,
 				1D79D28C27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift */,
+				1D6B420B2742D64C00BA8FD7 /* DetailViewControllerTest.swift */,
 				1D549D0D273EA87F00E884AA /* Info.plist */,
 			);
 			path = ClassifiedsTests;
@@ -568,6 +571,7 @@
 			files = (
 				1D549D0C273EA87F00E884AA /* ClassifiedsTests.swift in Sources */,
 				1D79D28D27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift in Sources */,
+				1D6B420C2742D64C00BA8FD7 /* DetailViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
