@@ -33,8 +33,8 @@ class ClassifiedsViewModel {
         classifieds.count
     }
     
-    func list(index: Int) -> ListViewModel {
-        classifieds[index].createListViewModel()
+    func list(index: Int) -> ClassifiedsListable {
+        ClassifiedsListViewModel(classified: classifieds[index])
     }
     
     func selectItem(at index: Int) {
@@ -60,12 +60,12 @@ class ClassifiedsViewModel {
 }
 
 private extension Classified {
-    func createListViewModel() -> ListViewModel {
-      ListViewModel(title: name, subtitle: price, imageURL: thumbnailURL)
+    func createListViewModel() -> ClassifiedsListViewModel {
+        ClassifiedsListViewModel(classified: self)
     }
     
     func createDetailViewModel() -> DetailViewModel {
-        let viewModel = DetailViewModel(title: name, subTitle: dateCreated.toString(), price: price)
+        let viewModel = DetailViewModel(title: name, subTitle: dateCreated.toString(), price: price, imageId: imageId ?? "")
         if let url = imageURL {
             viewModel.imageURL = url
         }
@@ -81,3 +81,5 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+

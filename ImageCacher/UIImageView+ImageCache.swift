@@ -11,13 +11,13 @@ let imageCache = NSCache<NSString, UIImage>()
 
 public extension UIImageView {
     
-    func loadImageUsingCache(url: URL?, placeholder: UIImage?) {
+    func loadImageUsingCache(url: URL?, key: String, placeholder: UIImage?) {
         guard let url = url else {
             image = placeholder
             return
         }
 
-        if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString)  {
+        if let cachedImage = imageCache.object(forKey: key as NSString)  {
             image = cachedImage
             return
         }
@@ -34,7 +34,7 @@ public extension UIImageView {
             
             DispatchQueue.main.async {
                 if let image = UIImage(data: data!) {
-                    imageCache.setObject(image, forKey: url.absoluteString as NSString)
+                    imageCache.setObject(image, forKey: key as NSString)
                     self?.image = image
                 }
             }

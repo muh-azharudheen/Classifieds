@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct ListViewModel {
-    var title: String
-    var subtitle: String
-    var imageURL: URL?
+protocol ClassifiedsListable {
+    var title: String { get }
+    var subTitle: String { get }
+    func loadImage(imageView: UIImageView?)
 }
 
 class ClassifiedListCell: UICollectionViewCell {
@@ -19,7 +19,7 @@ class ClassifiedListCell: UICollectionViewCell {
     @IBOutlet private (set) weak var labelTitle: UILabel?
     @IBOutlet private (set) weak var labelSubTitle: UILabel?
     
-    var item: ListViewModel? {
+    var item: ClassifiedsListable? {
         didSet {
             configure(list: item)
         }
@@ -32,10 +32,12 @@ class ClassifiedListCell: UICollectionViewCell {
     }
     
     // TODO: Implement Image loading from url
-    private func configure(list: ListViewModel?) {
+    private func configure(list: ClassifiedsListable?) {
         labelTitle?.text = list?.title
-        labelSubTitle?.text = list?.subtitle
-        imageView?.loadImage(with: list?.imageURL)
+        labelSubTitle?.text = list?.subTitle
+        imageView?.image = nil
+        guard let imageview = imageView else { return }
+        list?.loadImage(imageView: imageview)
     }
     
     private func setupViews() {

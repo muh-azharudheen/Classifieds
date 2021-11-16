@@ -16,12 +16,14 @@
 
 - (instancetype)initWithTitle:(NSString *)title
                      subTitle:(NSString *)subTitle
-                        price:(NSString *)price; {
+                        price:(NSString *)price
+                      imageId:(NSString *)imageId; {
     self = [super init];
     if (self) {
         _title = title;
         _subTitle = subTitle;
         _price = price;
+        _imageId = imageId;
     }
     return self;
 }

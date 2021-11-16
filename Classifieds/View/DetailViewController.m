@@ -39,7 +39,7 @@
     self.labelTitle.text = self.viewModel.title;
     self.labelSubTitle.text = self.viewModel.subTitle;
     self.labelPrice.text = self.viewModel.price;
-    [[self imageView] loadImageWith: self.viewModel.imageURL];
+    [[self imageView] loadImageWithMode:0 imageId: self.viewModel.imageId placeholder:[UIImage imageNamed:@"placeholder"] url: self.viewModel.imageURL];
 }
 - (IBAction)tapActionBackButton:(id)sender {
     [self.navigationController popViewControllerAnimated: YES];

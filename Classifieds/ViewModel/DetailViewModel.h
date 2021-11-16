@@ -17,10 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *subTitle;
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSURL *imageURL;
+@property (nonatomic, copy) NSString *imageId;
 
 - (instancetype)initWithTitle:(NSString *)title
                      subTitle:(NSString *)subTitle
-                        price:(NSString *)price;
+                        price:(NSString *)price
+                        imageId:(NSString *)imageId;
 
 @end
 
