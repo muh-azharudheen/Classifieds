@@ -15,7 +15,7 @@ class DetailViewControllerTests: XCTestCase {
         let title = "Test Title"
         let subTitle = "Test Sub Title"
         let price = "Test Price"
-        let viewModel = DetailViewModel(title: title, subTitle: subTitle, price: price)
+        let viewModel = DetailViewModel(title: title, subTitle: subTitle, price: price, imageId: "")
         
         let sut = makeSUT(viewModel: viewModel)
         _ = sut.view
