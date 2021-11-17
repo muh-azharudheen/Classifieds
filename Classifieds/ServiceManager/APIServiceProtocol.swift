@@ -10,5 +10,5 @@ import Foundation
 protocol APIServiceProtocol {
     
     func request<T: Decodable>(request: URLRequest, completion: @escaping (Result<T>)-> Void)
-    
+    func dataRequest(request: URLRequest, completion: @escaping (Result<Data>) -> Void)
 }

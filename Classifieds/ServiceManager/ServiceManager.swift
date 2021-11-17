@@ -7,22 +7,41 @@
 
 import Foundation
 
+struct UnexpectedValuesError: Error { }
+
+extension APIServiceProtocol {
+    
+    func request<T: Decodable>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
+        dataRequest(request: request) {
+            switch $0 {
+            case .success(let data):
+                do {
+                    let decoded = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(decoded))
+                } catch {
+                    completion(.failure(error: UnexpectedValuesError()))
+                }
+            case .failure(let error):
+                completion(.failure(error: error))
+            }
+        }
+    }
+}
+
 class ServiceManager: APIServiceProtocol {
     
     private init() { }
     
     static let shared = ServiceManager()
     
-    func request<T: Decodable>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
+    func dataRequest(request: URLRequest, completion: @escaping (Result<Data>) -> Void) {
         requestService(request: request, completion: completion)
     }
 }
 
 private extension ServiceManager {
     
-    private struct UnexpectedValuesError: Error { }
-    
-    func requestService<T: Decodable>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
+    func requestService(request: URLRequest, completion: @escaping (Result<Data>) -> Void) {
         
         let errorCompletion: (Error) -> Void = { error in
             DispatchQueue.main.async {
@@ -30,7 +49,7 @@ private extension ServiceManager {
             }
         }
         
-        let successCompletion: (T) -> Void = { item in
+        let successCompletion: (Data) -> Void = { item in
             DispatchQueue.main.async {
                 completion(.success(item))
             }
@@ -41,13 +60,7 @@ private extension ServiceManager {
                 errorCompletion(error)
                 return
             } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                
-                do {
-                    let decoded = try JSONDecoder().decode(T.self, from: data)
-                    successCompletion(decoded)
-                } catch {
-                    errorCompletion(error)
-                }
+                successCompletion(data)
             } else {
                 errorCompletion(UnexpectedValuesError())
             }

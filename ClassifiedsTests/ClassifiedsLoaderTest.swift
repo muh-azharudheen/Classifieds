@@ -101,27 +101,8 @@ class MockServiceProtocol: APIServiceProtocol {
         self.jsonString = jsonString
     }
     
-    func request<T>(request: URLRequest, completion: @escaping (Result<T>) -> Void) where T : Decodable {
-        
-        let errorCompletion: (Error) -> Void = { error in
-            DispatchQueue.main.async {
-                completion(.failure(error: error))
-            }
-        }
-        
-        let successCompletion: (T) -> Void = { item in
-            DispatchQueue.main.async {
-                completion(.success(item))
-            }
-        }
-        
-        guard let data = jsonString.data(using: .utf8) else { return }
-        do {
-            let decoded = try JSONDecoder().decode(T.self, from: data)
-            successCompletion(decoded)
-        } catch {
-            print(error)
-            errorCompletion(error)
-        }
+    func dataRequest(request: URLRequest, completion: @escaping (Result<Data>) -> Void) {
+        let data = jsonString.data(using: .utf8)!
+        completion(.success(data))
     }
 }
