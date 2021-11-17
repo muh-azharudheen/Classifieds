@@ -11,16 +11,9 @@ import XCTest
 class ClassifiedsLoaderTest: XCTestCase {
     
     func test_throwErrorWhenJsonStringIsEmpty() {
-        
         let result = resultAfterLoadingClassifiedWithExpectation(with: "")
-        guard let result = result else {
-            XCTFail("couldnt complete request")
-            return
-        }
-        guard case Result<[Classified]>.failure(_) =  result else {
-            XCTFail("Expected Failure on empty json string, but received success")
-            return
-        }
+        let error = error(from: result)
+        XCTAssertNotNil(error)
     }
     
     func test_success_onLoadingSingleClassified() {
@@ -29,7 +22,9 @@ class ClassifiedsLoaderTest: XCTestCase {
         ]
         
         guard let jsonString = jsonString(array: array) else { return }
-        testClassifiedCount(jsonString: jsonString, expectedCount: 1)
+        
+        let classifieds = classifiedsAfterLoadingWithExpectation(jsonString: jsonString)
+        XCTAssertEqual(classifieds?.count, 1)
     }
     
     func test_success_onLoadingMultipleClassified() {
@@ -40,7 +35,8 @@ class ClassifiedsLoaderTest: XCTestCase {
         ]
         
         guard let jsonString = jsonString(array: array) else { return }
-        testClassifiedCount(jsonString: jsonString, expectedCount: 3)
+        let classifieds = classifiedsAfterLoadingWithExpectation(jsonString: jsonString)
+        XCTAssertEqual(classifieds?.count, 3)
     }
     
     func test_classifiedShouldBeOmittedIfuidFromResponseisNil() {
@@ -51,26 +47,15 @@ class ClassifiedsLoaderTest: XCTestCase {
         ]
         
         guard let jsonString = jsonString(array: array) else { return }
-        testClassifiedCount(jsonString: jsonString, expectedCount: 0)
+        let classifieds = classifiedsAfterLoadingWithExpectation(jsonString: jsonString)
+        XCTAssertEqual(classifieds?.count, 0)
     }
     
-    private func testClassifiedCount(jsonString: String?, expectedCount: Int) {
-        guard let jsonString = jsonString else { return }
-
-        let result = resultAfterLoadingClassifiedWithExpectation(with: jsonString)
-        
-        guard let result = result else {
-            XCTFail("couldnt complete request")
-            return
-        }
-        guard case Result<[Classified]>.success(let items) =  result else {
-            XCTFail("Expected Success with a single classified Object, but received failure")
-            return
-        }
-        XCTAssertEqual(items.count, expectedCount)
+    private func makeSUT(serviceProtocol: APIServiceProtocol) -> ClassifiedsLoader {
+        ClassifiedsLoader(serviceProtocol: serviceProtocol)
     }
     
-    private func resultAfterLoadingClassifiedWithExpectation(with jsonString: String) -> Result<[Classified]>? {
+    private func resultAfterLoadingClassifiedWithExpectation(with jsonString: String) -> Result<[Classified]> {
         let sut = makeSUT(serviceProtocol: MockServiceProtocol(jsonString: jsonString))
         let expectation = expectation(description: "waiting for request to be completed")
         var result: Result<[Classified]>?
@@ -79,11 +64,15 @@ class ClassifiedsLoaderTest: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.5)
+        guard let result = result else {
+            fatalError("Couldnt convert response string to Result")
+        }
         return result
     }
     
-    private func makeSUT(serviceProtocol: APIServiceProtocol) -> ClassifiedsLoader {
-        ClassifiedsLoader(serviceProtocol: serviceProtocol)
+    private func classifiedsAfterLoadingWithExpectation(jsonString: String) -> [Classified]? {
+        let result = resultAfterLoadingClassifiedWithExpectation(with: jsonString)
+        return classifieds(from: result)
     }
     
     private func jsonString(array: [[String: Any?]]) -> String? {
@@ -114,6 +103,16 @@ class ClassifiedsLoaderTest: XCTestCase {
             dict["image_urls"] = [url]
         }
         return dict
+    }
+    
+    private func error(from result: Result<[Classified]>) -> Error? {
+        guard case Result<[Classified]>.failure(let error) = result else { return nil }
+        return error
+    }
+    
+    private func classifieds(from result: Result<[Classified]>) -> [Classified]? {
+        guard case Result<[Classified]>.success(let classifieds) = result else { return nil }
+        return classifieds
     }
 }
 
