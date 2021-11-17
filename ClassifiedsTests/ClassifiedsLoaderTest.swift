@@ -11,15 +11,8 @@ import XCTest
 class ClassifiedsLoaderTest: XCTestCase {
     
     func test_throwErrorWhenJsonStringIsEmpty() {
-        let sut = makeSUT(serviceProtocol: MockServiceProtocol(jsonString: ""))
-        let expectation = expectation(description: "waiting for request to be completed")
-        var result: Result<[Classified]>?
-        sut.loadClassified {
-            result = $0
-            expectation.fulfill()
-        }
         
-        wait(for: [expectation], timeout: 0.5)
+        let result = resultAfterLoadingClassifiedWithExpectation(with: "")
         guard let result = result else {
             XCTFail("couldnt complete request")
             return
@@ -36,25 +29,7 @@ class ClassifiedsLoaderTest: XCTestCase {
         ]
         
         guard let jsonString = jsonString(array: array) else { return }
-        
-        let sut = makeSUT(serviceProtocol: MockServiceProtocol(jsonString: jsonString))
-        let expectation = expectation(description: "waiting for request to be completed")
-        var result: Result<[Classified]>?
-        sut.loadClassified {
-            result = $0
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 0.5)
-        guard let result = result else {
-            XCTFail("couldnt complete request")
-            return
-        }
-        guard case Result<[Classified]>.success(let items) =  result else {
-            XCTFail("Expected Success with a single classified Object, but received failure")
-            return
-        }
-        XCTAssertEqual(items.count, 1)
+        testClassifiedCount(jsonString: jsonString, expectedCount: 1)
     }
     
     func test_success_onLoadingMultipleClassified() {
@@ -65,25 +40,7 @@ class ClassifiedsLoaderTest: XCTestCase {
         ]
         
         guard let jsonString = jsonString(array: array) else { return }
-        
-        let sut = makeSUT(serviceProtocol: MockServiceProtocol(jsonString: jsonString))
-        let expectation = expectation(description: "waiting for request to be completed")
-        var result: Result<[Classified]>?
-        sut.loadClassified {
-            result = $0
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 0.5)
-        guard let result = result else {
-            XCTFail("couldnt complete request")
-            return
-        }
-        guard case Result<[Classified]>.success(let items) =  result else {
-            XCTFail("Expected Success with a single classified Object, but received failure")
-            return
-        }
-        XCTAssertEqual(items.count, 3)
+        testClassifiedCount(jsonString: jsonString, expectedCount: 3)
     }
     
     func test_classifiedShouldBeOmittedIfuidFromResponseisNil() {
@@ -94,16 +51,14 @@ class ClassifiedsLoaderTest: XCTestCase {
         ]
         
         guard let jsonString = jsonString(array: array) else { return }
+        testClassifiedCount(jsonString: jsonString, expectedCount: 0)
+    }
+    
+    private func testClassifiedCount(jsonString: String?, expectedCount: Int) {
+        guard let jsonString = jsonString else { return }
+
+        let result = resultAfterLoadingClassifiedWithExpectation(with: jsonString)
         
-        let sut = makeSUT(serviceProtocol: MockServiceProtocol(jsonString: jsonString))
-        let expectation = expectation(description: "waiting for request to be completed")
-        var result: Result<[Classified]>?
-        sut.loadClassified {
-            result = $0
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 0.5)
         guard let result = result else {
             XCTFail("couldnt complete request")
             return
@@ -112,9 +67,20 @@ class ClassifiedsLoaderTest: XCTestCase {
             XCTFail("Expected Success with a single classified Object, but received failure")
             return
         }
-        XCTAssertEqual(items.count, 0)
+        XCTAssertEqual(items.count, expectedCount)
     }
     
+    private func resultAfterLoadingClassifiedWithExpectation(with jsonString: String) -> Result<[Classified]>? {
+        let sut = makeSUT(serviceProtocol: MockServiceProtocol(jsonString: jsonString))
+        let expectation = expectation(description: "waiting for request to be completed")
+        var result: Result<[Classified]>?
+        sut.loadClassified {
+            result = $0
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.5)
+        return result
+    }
     
     private func makeSUT(serviceProtocol: APIServiceProtocol) -> ClassifiedsLoader {
         ClassifiedsLoader(serviceProtocol: serviceProtocol)
