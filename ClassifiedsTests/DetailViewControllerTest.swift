@@ -30,5 +30,4 @@ class DetailViewControllerTests: XCTestCase {
         controller.viewModel = viewModel
         return controller
     }
-    
 }

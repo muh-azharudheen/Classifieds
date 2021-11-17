@@ -32,7 +32,6 @@
 		1D549D87273F93D100E884AA /* UIImageView+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */; };
 		1D6B420C2742D64C00BA8FD7 /* DetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B420B2742D64C00BA8FD7 /* DetailViewControllerTest.swift */; };
 		1D6B42122742E20000BA8FD7 /* ClassifiedImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B42112742E20000BA8FD7 /* ClassifiedImageCacher.swift */; };
-		1D6B42142743708900BA8FD7 /* DetailViewModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B42132743708900BA8FD7 /* DetailViewModelExtension.swift */; };
 		1D6B42162743710300BA8FD7 /* ClassifiedsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B42152743710300BA8FD7 /* ClassifiedsListViewModel.swift */; };
 		1D6B42182743711100BA8FD7 /* ClassifiedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B42172743711100BA8FD7 /* ClassifiedsViewModel.swift */; };
 		1D6B421B27438AAF00BA8FD7 /* ClassifiedsLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B421A27438AAF00BA8FD7 /* ClassifiedsLoaderTest.swift */; };
@@ -127,7 +126,6 @@
 		1D549D86273F93D100E884AA /* UIImageView+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageCache.swift"; sourceTree = "<group>"; };
 		1D6B420B2742D64C00BA8FD7 /* DetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTest.swift; sourceTree = "<group>"; };
 		1D6B42112742E20000BA8FD7 /* ClassifiedImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedImageCacher.swift; sourceTree = "<group>"; };
-		1D6B42132743708900BA8FD7 /* DetailViewModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelExtension.swift; sourceTree = "<group>"; };
 		1D6B42152743710300BA8FD7 /* ClassifiedsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifiedsListViewModel.swift; sourceTree = "<group>"; };
 		1D6B42172743711100BA8FD7 /* ClassifiedsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewModel.swift; sourceTree = "<group>"; };
 		1D6B421A27438AAF00BA8FD7 /* ClassifiedsLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsLoaderTest.swift; sourceTree = "<group>"; };
@@ -294,7 +292,6 @@
 				1D549D5C273F820500E884AA /* DetailViewModel.h */,
 				1D549D5D273F820500E884AA /* DetailViewModel.m */,
 				1D6B42152743710300BA8FD7 /* ClassifiedsListViewModel.swift */,
-				1D6B42132743708900BA8FD7 /* DetailViewModelExtension.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -571,7 +568,6 @@
 				1D6B42122742E20000BA8FD7 /* ClassifiedImageCacher.swift in Sources */,
 				1D549D29273EC85000E884AA /* ClassifiedListCell.swift in Sources */,
 				1D79D276273FE25A00EFB3D9 /* String-Extension.swift in Sources */,
-				1D6B42142743708900BA8FD7 /* DetailViewModelExtension.swift in Sources */,
 				1D79D27F273FFFE900EFB3D9 /* ClassifiedsLoaderProtocol.swift in Sources */,
 				1D79D271273FD74500EFB3D9 /* Classified.swift in Sources */,
 				1D549D60273F91F400E884AA /* UIImageView-Extension.swift in Sources */,
