@@ -11,7 +11,6 @@
 		1D549CF7273EA87D00E884AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549CF6273EA87D00E884AA /* SceneDelegate.swift */; };
 		1D549CFE273EA87F00E884AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D549CFD273EA87F00E884AA /* Assets.xcassets */; };
 		1D549D01273EA87F00E884AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D549CFF273EA87F00E884AA /* LaunchScreen.storyboard */; };
-		1D549D0C273EA87F00E884AA /* ClassifiedsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */; };
 		1D549D25273EAD2900E884AA /* ClassifiedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */; };
 		1D549D29273EC85000E884AA /* ClassifiedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D549D27273EC85000E884AA /* ClassifiedListCell.swift */; };
 		1D549D2A273EC85000E884AA /* ClassifiedListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D549D28273EC85000E884AA /* ClassifiedListCell.xib */; };
@@ -100,7 +99,6 @@
 		1D549D00273EA87F00E884AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D549D02273EA87F00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D549D07273EA87F00E884AA /* ClassifiedsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassifiedsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsTests.swift; sourceTree = "<group>"; };
 		1D549D0D273EA87F00E884AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D549D24273EAD2900E884AA /* ClassifiedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedsViewController.swift; sourceTree = "<group>"; };
 		1D549D27273EC85000E884AA /* ClassifiedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedListCell.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 		1D549D0A273EA87F00E884AA /* ClassifiedsTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D549D0B273EA87F00E884AA /* ClassifiedsTests.swift */,
 				1D79D28C27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift */,
 				1D6B420B2742D64C00BA8FD7 /* DetailViewControllerTest.swift */,
 				1D6B421A27438AAF00BA8FD7 /* ClassifiedsLoaderTest.swift */,
@@ -580,7 +577,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D549D0C273EA87F00E884AA /* ClassifiedsTests.swift in Sources */,
 				1D79D28D27403A9E00EFB3D9 /* ClassifiedViewControllerTests.swift in Sources */,
 				1D6B420C2742D64C00BA8FD7 /* DetailViewControllerTest.swift in Sources */,
 				1D6B421B27438AAF00BA8FD7 /* ClassifiedsLoaderTest.swift in Sources */,
