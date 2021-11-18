@@ -51,6 +51,12 @@ class ClassifiedsLoaderTest: XCTestCase {
         XCTAssertEqual(classifieds?.count, 0)
     }
     
+    func test_loaded_classifiedDateConversionIsAsExpected() {
+        XCTAssertEqual(loadUaeTimeString(from: "2019-02-24 04:04:17.566515"), "24:02:2019 08:02")
+        XCTAssertEqual(loadUaeTimeString(from: "2019-02-23 07:56:26.686128"), "23:02:2019 11:02")
+        XCTAssertEqual(loadUaeTimeString(from: "2019-02-23 22:40:26.022080"), "24:02:2019 02:02")
+    }
+    
     private func makeSUT(serviceProtocol: APIServiceProtocol) -> ClassifiedsLoader {
         ClassifiedsLoader(serviceProtocol: serviceProtocol)
     }
@@ -68,6 +74,18 @@ class ClassifiedsLoaderTest: XCTestCase {
             fatalError("Couldnt convert response string to Result")
         }
         return result
+    }
+    
+    private func loadDate(with responseDateStirng: String) -> Date {
+        let array = [
+            createJsonString(created_at: responseDateStirng, price: "AED 5", name: "Notebook", uid: "1233333", image_id: "9355183956e3445e89735d877b798689", imageurl: nil, imagethumbnailURL: nil),
+        ]
+        guard let jsonString = jsonString(array: array) else {
+            fatalError("cannot create jsonString")
+        }
+        let classifieds = classifiedsAfterLoadingWithExpectation(jsonString: jsonString)
+        XCTAssertNotNil(classifieds?.first?.dateCreated)
+        return classifieds!.first!.dateCreated
     }
     
     private func classifiedsAfterLoadingWithExpectation(jsonString: String) -> [Classified]? {
@@ -113,6 +131,18 @@ class ClassifiedsLoaderTest: XCTestCase {
     private func classifieds(from result: Result<[Classified]>) -> [Classified]? {
         guard case Result<[Classified]>.success(let classifieds) = result else { return nil }
         return classifieds
+    }
+    
+    private func loadUaeTimeString(from responseString: String) -> String {
+        let date = loadDate(with: responseString)
+        return uaeDateString(date: date)
+    }
+    
+    func uaeDateString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd:MM:YYYY HH:MM"
+        formatter.timeZone =  TimeZone(abbreviation: "GMT+4")
+        return formatter.string(from: date)
     }
 }
 

@@ -76,7 +76,7 @@ private extension Classified {
 extension Date {
     func toString() -> String {
         let formatter = DateFormatter()
-        formatter.locale = Locale.current
+        formatter.timeZone = TimeZone.current
         formatter.dateFormat = "MMM dd EEEE"
         return formatter.string(from: self)
     }
